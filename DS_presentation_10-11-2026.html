@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="DS_presentation_10-11-2026_files/libs/clipboard/clipboard.min.js"></script>
+<script src="DS_presentation_10-11-2026_files/libs/quarto-html/tabby.min.js"></script>
+<script src="DS_presentation_10-11-2026_files/libs/quarto-html/popper.min.js"></script>
+<script src="DS_presentation_10-11-2026_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="DS_presentation_10-11-2026_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="DS_presentation_10-11-2026_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="DS_presentation_10-11-2026_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
+
+  <meta name="author" content="Raphaël E. G. Mounet">
+  <title>Every ship is a wave buoy… if you know how to read it!</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="DS_presentation_10-11-2026_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="DS_presentation_10-11-2026_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="DS_presentation_10-11-2026_files/libs/revealjs/dist/theme/quarto-dc5400e2792038be2d0df4f0d3d48db3.css">
+  <link href="DS_presentation_10-11-2026_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="DS_presentation_10-11-2026_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="DS_presentation_10-11-2026_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="DS_presentation_10-11-2026_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#2F3EEA" data-background-image="images/sea_horizon.jpg" data-background-position="right" data-background-size="42.2% 100%" data-dtu-front="photo" class="quarto-title-block center">
+  <h1 class="title">Every ship is a wave buoy… if you know how to read it!</h1>
+  <p class="subtitle">Presentation to DS/S-262 committee</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Raphaël E. G. Mounet
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:regmo@dtu.dk">regmo@dtu.dk</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Technical University of Denmark (DTU)
+          </p>
+        <p class="quarto-title-affiliation">
+            Section of Fluid Mechanics, Coastal and Maritime Engineering
+          </p>
+        <p class="quarto-title-affiliation">
+            Department of Civil and Mechanical Engineering
+          </p>
+        <p class="quarto-title-affiliation">
+            Kgs. Lyngby, Denmark
+          </p>
+    </div>
+</div>
+
+</section>
+<section id="introduction-who-am-i" class="slide level2">
+<h2><span class="dtu-kicker">Introduction</span> Who am I?</h2>
+<aside class="notes">
+<p>(1:30) I sit between naval architecture and data science, and between academia and industry.</p>
+<p>[Hook, said on the title slide just before: “Hands up if your fleet or your clients’ ships carry a motion sensor or an IMU on board.”]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span class="dtu-blue" style="position: absolute; top: 150px; left: 60px; font-weight: 700; font-size: 0.8em;">My research field:</span> <span style="position: absolute; top: 180px; left: 60px; width: 880px; font-size: 0.8em;"><em>The estimation of metocean variables based on response measurements on board floating vessels.</em></span></p>
+<!-- Timeline -->
+<div class="dtu-timeline" style="position: absolute; top: 250px; left: 60px; width: 880px;">
+<p><span class="tl-item" style="left: 0px;"><strong>2016–2020</strong><br>Engineering degree<br>École Centrale de Lyon<br>(FR)</span> <span class="tl-item" style="left: 180px;"><strong>2018–2020</strong><br>MSc in Mechanical Engineering<br>DTU (DK)</span> <span class="tl-item" style="left: 360px;"><strong>2020–2023</strong><br>Double PhD<br>DTU (DK) &amp; NTNU (NO)</span> <span class="tl-item" style="left: 540px;"><strong>2024–now</strong><br>Postdoc, DTU<br>Co-PI of WEFOSWAB (2024–2027): <em>“Wave estimation and forecasting using ships as wave buoys”</em></span> <span class="tl-item" style="left: 720px;"><strong>May 2026</strong><br>Member of DS/S-262</span></p>
+</div>
+<div style="position: absolute; top: 430px; left: 60px; width: 880px; font-size: 0.68em; line-height: 1.4;">
+<p><span class="dtu-blue"><strong>Awards:</strong></span> Best Paper Presented by a Young Researcher, IEEE MetroSea 2024 · Maenosono award 2026 (Japan)</p>
+<p><span class="dtu-blue"><strong>Coordinator of:</strong></span> LY300 course on ship hydrostatics and stability (DTU)</p>
+</div>
+<!-- Partner strip -->
+<div style="position: absolute; top: 540px; left: 60px; width: 1180px; font-size: 0.6em;">
+<p><span class="dtu-blue"><strong>Main partners from academia and industry:</strong></span> Kobe University (JP), University of Exeter (UK), Met Office (UK), Oshen (UK), Maersk (DK), DNV (NO), NTNU (NO), MOBILIS (FR).</p>
+</div>
+<p><img data-src="images/kobe_university_logo.jpeg" style="max-width: none; max-height: none; position: absolute; top: 600px; left: 60px; height: 50px;" alt="Kobe University logo"></p>
+<p><img data-src="images/ntnu_logo.png" style="max-width: none; max-height: none; position: absolute; top: 600px; left: 200px; height: 38px; padding: 6px 10px; border-radius: 6px; background-color: #2F3EEA;" alt="NTNU logo"></p>
+<p><img data-src="images/oshen_logo.jpeg" style="max-width: none; max-height: none; position: absolute; top: 600px; left: 330px; height: 50px;" alt="Oshen logo"></p>
+<!-- Logos with wide white margins are cropped with object-fit: cover -->
+<p><img data-src="images/Maersk-Logo.png" style="max-width: none; max-height: none; position: absolute; top: 607px; left: 490px; width: 162px; height: 36px; object-fit: cover;" alt="Maersk logo"></p>
+<p><img data-src="images/DNV_logo.webp" style="max-width: none; max-height: none; position: absolute; top: 600px; left: 680px; width: 116px; height: 50px; object-fit: cover;" alt="DNV logo"></p>
+<!-- Met Office: the logo only fills x = 268-765, y = 100-540 px of the 1024 x 675 file,
+     so it is cropped in a 56 x 50 px window (scale 50/440). -->
+<div style="position: absolute; top: 610px; left: 825px; width: 56px; height: 50px; overflow: hidden;">
+<p><img data-src="images/Met_Office-logo.png" style="max-width: none; max-height: none; position: absolute; top: -11px; left: -30px; width: 116px; height: 77px; margin: 0;" alt="Met Office logo"></p>
+</div>
+<p><img data-src="images/University-of-Exeter_Logo.png" style="max-width: none; max-height: none; position: absolute; top: 600px; left: 905px; width: 148px; height: 50px; object-fit: cover;" alt="University of Exeter logo"></p>
+<p><img data-src="images/LOGO-MOBILIS-01-scaled-1.jpg" style="max-width: none; max-height: none; position: absolute; top: 597px; left: 1080px; width: 50px; height: 56px; object-fit: cover;" alt="MOBILIS logo"></p>
+<p><img data-src="images/author_with_asv.jpeg" style="max-width: none; max-height: none; position: absolute; top: 150px; left: 980px; width: 270px;" alt="The author on a boat next to an autonomous surface vessel"></p>
+</section>
+<section id="introduction-four-questions" class="slide level2">
+<h2><span class="dtu-kicker">Introduction</span> Four questions</h2>
+<aside class="notes">
+<p>(0:30) This talk answers four questions, and the fourth one is for you.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="dtu-box" style="position: absolute; top: 200px; left: 60px; width: 270px; height: 220px; text-align: center;">
+<p><span class="dtu-blue" style="font-size: 2.5em; font-weight: 700;">1</span></p>
+<p>Why do we need wave data?</p>
+</div>
+<div class="dtu-box" style="position: absolute; top: 200px; left: 360px; width: 270px; height: 220px; text-align: center;">
+<p><span class="dtu-blue" style="font-size: 2.5em; font-weight: 700;">2</span></p>
+<p>How is it obtained today?</p>
+</div>
+<div class="dtu-box" style="position: absolute; top: 200px; left: 660px; width: 270px; height: 220px; text-align: center;">
+<p><span class="dtu-blue" style="font-size: 2.5em; font-weight: 700;">3</span></p>
+<p>How can a ship act as a wave buoy?</p>
+</div>
+<div class="dtu-box" style="position: absolute; top: 200px; left: 960px; width: 270px; height: 220px; text-align: center; background-color: #2F3EEA; color: white;">
+<p><span style="font-size: 2.5em; font-weight: 700;">4</span></p>
+<p>What could this mean for standards?</p>
+</div>
+<p><span class="dtu-blue" style="position: absolute; top: 450px; left: 960px; width: 270px; text-align: center; font-style: italic; font-size: 0.8em;">Question 4 is for you!</span></p>
+<!-- ======================================================================= -->
+<!-- BLOCK B: WHY WAVE DATA (2:20–4:20)                                       -->
+<!-- ======================================================================= -->
+</section>
+<section id="why-wave-data-your-insights" class="slide level2">
+<h2><span class="dtu-kicker">Why wave data?</span> Your insights</h2>
+<aside class="notes">
+<p>(0:30) What can wave data be used for? I will show you some examples, but first I want to hear your ideas. Please write them in the word cloud by joining the Vevox session.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- Vevox embed code from the Vevox platform (vevox.app allows embedding).
+     Sized to the slide instead of the suggested 100% / min-height 800px, which would overflow. -->
+<div style="position: absolute; top: 115px; left: 60px; width: 1160px; height: 560px;">
+<iframe data-src="https://dtu.display.vevox.com#/present/997598/T41IMTK146UW8NSFDMH7" width="1160" height="560" frameborder="0" style="border: 0;" allow="fullscreen" allowfullscreen="" title="Vevox"></iframe>
+</div>
+</section>
+<section id="why-wave-data-waves-drive-cost-safety-and-structural-life" class="slide level2">
+<h2><span class="dtu-kicker">Why wave data?</span> Waves drive cost, safety and structural life</h2>
+<aside class="notes">
+<p>(1:00) Because waves are the fundamental driver of most of the processes we are concerned about (as maritime engineers, naval architects, or ocean scientists).</p>
+<p>Every key operational decision on a ship depends on a wave estimate.</p>
+<ul>
+<li>Analysing wave-structure interactions before/during/after operations</li>
+<li>Collecting historical wave data for design and rule specifications</li>
+<li>Understanding weather and climate (mechanisms of surface-water mixing and air-sea fluxes)</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- Column 1: fuel and emissions -->
+<p><span class="dtu-blue" style="position: absolute; top: 160px; left: 40px; font-weight: 700; font-size: 0.85em;">Fuel and emissions</span></p>
+<div class="dtu-box" style="position: absolute; top: 200px; left: 40px; width: 380px; font-size: 17px;">
+<p>Added resistance in waves, weather routing, CII and EU ETS exposure.</p>
+<p><strong>Global shipping</strong> contributes by <span class="dtu-blue">~ 3%</span> to worldwide anthropogenic emissions of greenhouse gases (IMO, 2020).</p>
+</div>
+<p><img data-src="images/ship_in_waves.png" style="max-width: none; max-height: none; position: absolute; top: 360px; left: 40px; width: 380px;" alt="A ship sailing through heavy seas"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 625px; left: 40px; width: 380px;"><a href="https://www.flickr.com/photos/8706293@N06/2986788490">“Waves of Silence”</a> by <a href="https://www.flickr.com/photos/8706293@N06">Joe Thomissen</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</span></p>
+<!-- Column 2: safety -->
+<p><span class="dtu-blue" style="position: absolute; top: 160px; left: 450px; font-weight: 700; font-size: 0.85em;">Safety</span></p>
+<div class="dtu-box" style="position: absolute; top: 200px; left: 450px; width: 380px; font-size: 17px;">
+<p>Parametric roll and container losses.</p>
+<p>Over the past 10 years, an average of <strong>1,274 containers</strong> have been lost at sea annually (IMO, 2025).</p>
+</div>
+<p><img data-src="images/ONE_Apus_2.webp" style="max-width: none; max-height: none; position: absolute; top: 360px; left: 450px; width: 380px; height: 249px; object-fit: cover;" alt="The container ship ONE Apus with collapsed container stacks after losing containers at sea"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 625px; left: 450px; width: 380px;">ONE Apus as it arrived in Kobe, Japan, December 8, 2020. Photo: Twitter @mrnkA4srnrA</span></p>
+<!-- Column 3: structure -->
+<p><span class="dtu-blue" style="position: absolute; top: 160px; left: 860px; font-weight: 700; font-size: 0.85em;">Structure</span></p>
+<div class="dtu-box" style="position: absolute; top: 200px; left: 860px; width: 380px; font-size: 17px;">
+<p>Fatigue and hull girder loads.</p>
+<p><strong>Historical wave and response data</strong> need to be collected for design and (predictive) maintenance.</p>
+</div>
+<p><img data-src="images/MOL_Comfort-1536x1020.jpeg" style="max-width: none; max-height: none; position: absolute; top: 360px; left: 860px; width: 380px; height: 249px; object-fit: cover;" alt="The container ship MOL Comfort broken in two in the Indian Ocean"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 625px; left: 860px; width: 380px;">The MV MOL Comfort after structural failure on June 17, 2013 in the Indian Ocean</span></p>
+</section>
+<section id="why-wave-data-the-observation-gap" class="slide level2">
+<h2><span class="dtu-kicker">Why wave data?</span> The observation gap</h2>
+<aside class="notes">
+<p>(1:00) Wave sensors are sparse and coastal, while ships are everywhere wave data is missing. Shows the potential of having any ship as a sailing wave buoy</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span class="dtu-blue" style="position: absolute; top: 160px; left: 40px; font-weight: 700; font-size: 0.8em;">Scientific wave buoys</span></p>
+<!-- Screenshot of the NDBC map (the site cannot be embedded: www.ndbc.noaa.gov sends
+     "X-Frame-Options: deny"). The credit links to the live map. -->
+<p><img data-src="images/National%20Data%20Buoy%20Center%202026-11-09.png" style="max-width: none; max-height: none; position: absolute; top: 200px; left: 40px; width: 590px; height: 332px; object-fit: cover;" alt="World map of NOAA NDBC station locations, shown as yellow markers, concentrated along the coasts of North America"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 548px; left: 40px; width: 590px;">Map: <a href="https://www.ndbc.noaa.gov/obs.shtml?lat=20.000000&amp;lon=-120.000000&amp;zoom=2&amp;type=oceans&amp;status=r&amp;pgm=&amp;op=&amp;ls=n" target="_blank">NOAA National Data Buoy Center</a>, retrieved 9 November 2026.</span></p>
+<p><span class="dtu-blue" style="position: absolute; top: 160px; left: 650px; font-weight: 700; font-size: 0.8em;">Ship traffic (AIS density)</span></p>
+<p><img data-src="images/GFW-vessel_traffic_September_2026.png" style="max-width: none; max-height: none; position: absolute; top: 200px; left: 650px; width: 590px; height: 332px; object-fit: cover;" alt="World map of vessel traffic density, with bright shipping lanes crossing all oceans"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 548px; left: 650px; width: 590px;">Map: <a href="https://globalfishingwatch.org/map">Global Fishing Watch</a>, vessel traffic, September 2026.</span></p>
+<div style="position: absolute; top: 585px; left: 40px; width: 1000px; font-style: italic; font-size: 0.7em; line-height: 1.4;">
+<p>“[S]ampling is such a dull word. Nevertheless, the concept is of immense importance. Most of the previous century could be called a century of <span class="dtu-blue">undersampling</span>.” <span style="font-style: normal;">– <strong>Walter H. Munk</strong>, April 2002</span></p>
+</div>
+<p><img data-src="images/walter_munk_1956.jpg" style="max-width: none; max-height: none; position: absolute; top: 570px; left: 1080px; height: 90px;" alt="Portrait of Walter H. Munk in 1956"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 670px; left: 1080px;"><a href="https://upload.wikimedia.org/wikipedia/en/4/42/Walter_Munk_1956.jpg">Munk in 1956</a></span></p>
+<!-- ======================================================================= -->
+<!-- BLOCK C: TECHNOLOGIES (4:20–6:20)                                        -->
+<!-- ======================================================================= -->
+</section>
+<section id="how-is-it-obtained-today-how-the-sea-state-is-estimated-today" class="slide level2">
+<h2><span class="dtu-kicker">How is it obtained today?</span> How the sea state is estimated today</h2>
+<aside class="notes">
+<p>(1:00) No single technology gives coverage, resolution, direction and low cost at once.</p>
+<p>The specific use-case (previous slide) may set different requirements to availability and updating-frequency.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><img data-src="images/SSE_technologies.png" style="max-width: none; max-height: none; position: absolute; top: 100px; left: 315px; width: 650px;" alt="SSE technologies: wave modelling (third-generation spectral wave models), remote sensing (imaging radar, marine satellite altimeter), in-situ observations (wave buoys, ship wavemeter, shipborne wave radar) and vessels as floating wave sensors (ship-as-a-wave-buoy)"></p>
+<!-- Qualitative table. Ratings (as set by the author): 🙂 = +, 😐 = ~, 🙁 = −. -->
+<div style="position: absolute; top: 448px; left: 160px; width: 960px;">
+<style>
+  .reveal .sse-table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.1; }
+  .reveal .sse-table th { font-weight: 700; padding: 2px 6px; border-bottom: 2px solid #2F3EEA; text-align: center !important; vertical-align: bottom; }
+  .reveal .sse-table th:first-child, .reveal .sse-table td:first-child { text-align: left !important; width: 250px; }
+  .reveal .sse-table td { padding: 0px 6px; border-bottom: 1px solid #fff; text-align: center !important; vertical-align: middle; }
+  .reveal .sse-table td.r { font-size: 20px; line-height: 1.15; }
+  .reveal .sse-table td.p { background-color: rgba(31, 208, 130, 0.22); }
+  .reveal .sse-table td.z { background-color: rgba(246, 208, 77, 0.30); }
+  .reveal .sse-table td.n { background-color: rgba(232, 63, 72, 0.18); }
+  .reveal .sse-table td small { color: #666; font-size: 12px; }
+  .reveal .sse-table tr.ship td { border-top: 3px solid #2F3EEA; border-bottom: 3px solid #2F3EEA; }
+  .reveal .sse-table tr.ship td:first-child { color: #2F3EEA; font-weight: 700; }
+</style>
+
+<table class="sse-table caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Technology</th>
+<th data-quarto-table-cell-role="th">Spatial<br>
+coverage</th>
+<th data-quarto-table-cell-role="th">Time<br>
+resolution</th>
+<th data-quarto-table-cell-role="th">Directional<br>
+information</th>
+<th data-quarto-table-cell-role="th">Cost</th>
+<th data-quarto-table-cell-role="th">Available at the<br>
+ship's position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Wave models</strong> <span class="small">(ERA5, WAM)</span></td>
+<td class="r p">🙂</td>
+<td class="r z">😐</td>
+<td class="r p">🙂</td>
+<td class="r n">🙁</td>
+<td class="r z">😐</td>
+</tr>
+<tr class="even">
+<td><strong>Satellites</strong> <span class="small">(altimetry, SAR)</span></td>
+<td class="r z">😐</td>
+<td class="r z">😐</td>
+<td class="r n">🙁</td>
+<td class="r n">🙁</td>
+<td class="r n">🙁</td>
+</tr>
+<tr class="odd">
+<td><strong>Buoys</strong></td>
+<td class="r n">🙁</td>
+<td class="r p">🙂</td>
+<td class="r p">🙂</td>
+<td class="r n">🙁</td>
+<td class="r n">🙁</td>
+</tr>
+<tr class="even">
+<td><strong>Shipborne radar</strong> <span class="small">(e.g. WaMoS)</span></td>
+<td class="r n">🙁</td>
+<td class="r p">🙂</td>
+<td class="r p">🙂</td>
+<td class="r n">🙁</td>
+<td class="r p">🙂</td>
+</tr>
+<tr class="ship odd">
+<td>Ship as a wave buoy</td>
+<td class="r n">🙁</td>
+<td class="r p">🙂</td>
+<td class="r p">🙂</td>
+<td class="r p">🙂</td>
+<td class="r p">🙂</td>
+</tr>
+</tbody>
+</table>
+
+<div style="margin-top: 4px; font-size: 12px; color: #555; text-align: right;"><span style="background: rgba(31,208,130,0.22); padding: 1px 6px;">🙂 strength</span> &nbsp; <span style="background: rgba(246,208,77,0.30); padding: 1px 6px;">😐 partial</span> &nbsp; <span style="background: rgba(232,63,72,0.18); padding: 1px 6px;">🙁 weakness</span></div>
+</div>
+</section>
+<section id="how-is-it-obtained-today-observed-waves-are-estimates-too" class="slide level2">
+<h2><span class="dtu-kicker">How is it obtained today?</span> “Observed” waves are estimates too</h2>
+<aside class="notes">
+<p>(1:00) Every wave value used in practice carries uncertainty, but standards rarely say how large it is. This slide sets up the standards discussion.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- 1. Map of the C-star track around buoy E1 (1133 x 1222 px, shown at 470 px high) -->
+<p><img data-src="images/OperData_map_Buoy_E1_full-1.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 105px; left: 30px; height: 470px;" data-fragment-index="1" alt="Map of the English Channel with an inset off Plymouth showing the C-star track segments around buoy E1, within a 30 km radius"></p>
+<!-- 2. C-star photo, inset in the lower-left corner of the map (sea / Brittany area, clear of the zoom box) -->
+<p><img data-src="images/C_star_picture.jpg" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 438px; left: 68px; width: 110px; height: 110px; object-fit: cover; object-position: 50% 45%; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.4);" data-fragment-index="1" alt="The Oshen C-star autonomous surface vessel at sea"> <span class="fragment" data-fragment-index="1" style="position: absolute; top: 518px; left: 190px; width: 150px; font-size: 11px; line-height: 1.25; font-style: italic; background-color: rgba(255,255,255,0.85); padding: 2px 5px; border-radius: 3px;">The Oshen C-Star autonomous surface vessel</span></p>
+<!-- 3. Hm0: C-star estimate vs buoy E1 -->
+<p><img data-src="images/SSparams_corr_plot_EMEP_Hm0_Buoy_E1_full-1.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 160px; left: 480px; height: 300px;" data-fragment-index="2" alt="Scatter plot of significant wave height Hm0 estimated from the C-star versus measured by buoy E1, from 0 to 2.7 m, clustered around the diagonal"></p>
+<!-- 4. Wave spectra: medians and interquartile ranges, C-star vs buoy E1 -->
+<p><img data-src="images/Sf_quantiles_Buoy_E1_full-1.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 160px; left: 845px; height: 300px;" data-fragment-index="3" alt="Wave spectral density versus frequency: medians and interquartile ranges for the C-star (GPS) and buoy E1, overlapping around the spectral peak near 0.12 Hz"></p>
+<p><span class="fragment" data-fragment-index="1" style="position: absolute; top: 590px; left: 30px; width: 1220px; font-size: 13px; line-height: 1.3; color: #444;">C-star track around buoy E1 off Plymouth (left); significant wave height <span class="math inline">\(H_{m0}\)</span> estimated from the C-star versus measured by buoy E1 (middle); wave spectra from both platforms (right). From <span class="dtu-blue">Mounet et al.&nbsp;(2026b)</span>, OMAE 2026.</span> <span class="dtu-blue" style="position: absolute; top: 500px; left: 500px; width: 740px; text-align: center; font-weight: 700; font-size: 0.85em;">Sailing through the English Channel: whose wave heights would you trust, the buoy’s or the C-star’s?</span></p>
+<!-- ======================================================================= -->
+<!-- BLOCK D: THE WAVE-BUOY ANALOGY (6:20–9:20)                               -->
+<!-- ======================================================================= -->
+</section>
+<section id="how-can-a-ship-act-as-a-wave-buoy-a-ship-is-a-large-imperfect-wave-buoy" class="slide level2">
+<h2><span class="dtu-kicker">How can a ship act as a wave buoy?</span> A ship is a large, imperfect wave buoy</h2>
+<aside class="notes">
+<p>(1:30) - Measurements of the buoy’s motions are processed to give the wave spectrum in real-time and at the buoy’s exact position. - Can we do the same with a ship…?? Yes!A ship filters waves into motions; reverse the filter and you recover the waves. The buoy-to-ship swap (last step) is the key moment of the talk.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span style="position: absolute; top: 120px; left: 1060px; width: 200px; text-align: right; font-style: italic; font-size: 0.65em;">Nielsen et al.&nbsp;(2023)</span></p>
+<!-- Hydrodynamic transfer functions (the "filter") -->
+<div class="fragment" data-fragment-index="3" style="position: absolute; top: 326px; left: 347px; width: 611px; height: 359px; border-radius: 50%; background: linear-gradient(to bottom, rgba(47,62,234,0) 0%, rgba(47,62,234,1) 100%); z-index: 5; color: white; text-align: center; font-size: 0.75em;">
+<p><span style="position: absolute; left: 0; right: 0; bottom: 28px;">Transfer functions (the “filter”)</span></p>
+</div>
+<!-- The buoy is shown first and is replaced by the ship (step 6) -->
+<p><img data-src="images/wave_buoy_column.png" class="fragment fade-out" style="max-width: none; max-height: none; position: absolute; top: 152px; left: 530px; width: 224px; height: 460px; object-fit: cover;" data-fragment-index="6" alt="A yellow wave buoy in the water"></p>
+<p><img data-src="images/fishing_vessel_alf.jpeg" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 155px; left: 352px; width: 600px; height: 346px; object-fit: cover; object-position: bottom;" data-fragment-index="6" alt="A fishing vessel in heavy seas"></p>
+<p><span class="dtu-credit fragment" data-fragment-index="6" style="position: absolute; top: 650px; left: 10px; width: 330px;"><a href="https://www.flickr.com/photos/48399297@N04/8675799490">“French Fishing Vessel ‘Alf’ in the Irish Sea”</a> by <a href="https://www.flickr.com/photos/48399297@N04">Defence Images</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</span></p>
+<!-- The four boxes of the loop -->
+<p><span class="fragment" data-fragment-index="1" style="position: absolute; top: 156px; left: 751px; width: 200px; text-align: right; font-size: 0.7em; line-height: 1.2; background-color: rgba(255,255,255,0.75); padding: 2px 6px;">Measured motions</span></p>
+<p><span class="fragment" data-fragment-index="2" style="position: absolute; top: 400px; left: 1030px; width: 200px; text-align: center; font-size: 0.7em; line-height: 1.2;">Motion spectra</span></p>
+<p><span class="fragment" data-fragment-index="4" style="position: absolute; top: 368px; left: 110px; width: 180px; text-align: center; font-size: 0.7em; line-height: 1.2;">Directional wave spectrum</span></p>
+<p><img data-src="images/directional_spectrum_polar.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 412px; left: 8px; width: 185px;" data-fragment-index="4" alt="Small polar plot of a directional wave spectrum"></p>
+<p><span class="fragment" data-fragment-index="5" style="position: absolute; top: 156px; left: 352px; width: 170px; font-size: 0.7em; line-height: 1.2; background-color: rgba(255,255,255,0.75); padding: 2px 6px;"><span class="math inline">\(H_s\)</span>, <span class="math inline">\(T_p\)</span>, direction</span></p>
+<!-- Curved arrows of the loop, one per build step -->
+<div class="fragment" data-fragment-index="2" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah2" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="black"></path></marker></defs>
+  <path d="M 955 185 C 1080 185, 1135 240, 1135 382" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah2)"></path>
+</svg>
+</div>
+<div class="fragment" data-fragment-index="3" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah4" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="black"></path></marker></defs>
+  <path d="M 1135 452 C 1135 580, 1060 625, 935 618" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah4)"></path>
+</svg>
+</div>
+<div class="fragment" data-fragment-index="4" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah5" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="black"></path></marker></defs>
+  <path d="M 420 640 C 260 640, 200 570, 200 462" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah5)"></path>
+</svg>
+</div>
+<div class="fragment" data-fragment-index="5" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah6" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="black"></path></marker></defs>
+  <path d="M 200 362 C 200 230, 235 185, 346 185" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah6)"></path>
+</svg>
+</div>
+</section>
+<section id="how-can-a-ship-act-as-a-wave-buoy-why-ships-are-harder-to-read-than-buoys" class="slide level2">
+<h2><span class="dtu-kicker">How can a ship act as a wave buoy?</span> Why ships are harder to “read” than buoys</h2>
+<aside class="notes">
+<p>(1:00) Three difficulties separate a ship from a buoy, and my research addresses each one. The three tags come back on the outcome slides.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="dtu-box fragment" data-fragment-index="1" style="position: absolute; top: 140px; left: 60px; width: 360px; height: 520px;">
+<p><span class="dtu-tag">Size</span></p>
+<p>&nbsp;</p>
+<p>A large ship <strong>ignores short waves</strong>: its motions filter them out.</p>
+</div>
+<div class="dtu-box fragment" data-fragment-index="2" style="position: absolute; top: 140px; left: 460px; width: 360px; height: 520px;">
+<p><span class="dtu-tag">Forward speed</span></p>
+<p>&nbsp;</p>
+<p>The <strong>Doppler shift</strong> distorts the wave frequencies that the ship encounters.</p>
+</div>
+<div class="dtu-box fragment" data-fragment-index="3" style="position: absolute; top: 140px; left: 860px; width: 360px; height: 520px;">
+<p><span class="dtu-tag">Uncertain filter</span></p>
+<p>&nbsp;</p>
+<p>The <strong>loading condition</strong> and <strong>speed</strong> change the transfer functions.</p>
+</div>
+<!-- One picture per box (336 x 250 px, bottom of each box) -->
+<p><img data-src="images/Feeder%20ship%20off%20shore%20of%20Hawaii.jpg" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 395px; left: 72px; width: 336px; height: 250px; object-fit: cover; object-position: 50% 60%; border-radius: 6px;" data-fragment-index="1" alt="A small container feeder ship at sea, seen from above"></p>
+<!-- GIF reduced from 214 MB: black end frames removed, every 2nd frame kept, rotated so the ship heads right, watermark cropped, 360 x 268 px -->
+<p><img data-src="images/containership_gif.gif" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 395px; left: 472px; width: 336px; height: 250px; object-fit: cover; border-radius: 6px;" data-fragment-index="2" alt="Animated aerial view of a container ship sailing through the water with a white wake"></p>
+<p><img data-src="images/Container%20ship%20loading.jpg" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 395px; left: 872px; width: 336px; height: 250px; object-fit: cover; object-position: 50% 70%; border-radius: 6px;" data-fragment-index="3" alt="A container ship being loaded by gantry cranes in port"></p>
+</section>
+<section id="how-can-a-ship-act-as-a-wave-buoy-what-is-needed-on-board" class="slide level2">
+<h2><span class="dtu-kicker">How can a ship act as a wave buoy?</span> What is needed on board</h2>
+<aside class="notes">
+<p>(0:30) The hardware is mostly already installed; the value is in the processing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div style="position: absolute; top: 180px; left: 60px; width: 560px; font-size: 0.85em;">
+<ul>
+<li>Inertial measurement unit (IMU) or motion reference unit (MRU)</li>
+<li>GPS</li>
+<li>Basic ship particulars and the loading condition</li>
+</ul>
+</div>
+<p><span class="todo" style="position: absolute; top: 400px; left: 60px; width: 560px; font-size: 0.6em;">Where these sensors are often already installed (e.g.&nbsp;hull monitoring, DP, …)</span></p>
+<p><img data-src="images/vessel_6dof_motions.png" style="max-width: none; max-height: none; position: absolute; top: 180px; left: 680px; width: 540px;" alt="The six rigid-body motions of a vessel: surge, sway, heave, roll, pitch and yaw"></p>
+<p><span class="todo" style="position: absolute; top: 540px; left: 680px; width: 540px; font-size: 0.55em;">Mark the three sensors on the ship outline (Oshen sensor-label style)</span></p>
+<!-- ======================================================================= -->
+<!-- BLOCK E: MAIN RESEARCH OUTCOMES (9:20–14:50)                             -->
+<!-- ======================================================================= -->
+</section>
+<section id="research-outcomes-1.-from-single-ships-to-wave-maps" class="slide level2">
+<h2><span class="dtu-kicker">Research outcomes</span> 1. From single ships to wave maps</h2>
+<aside class="notes">
+<p>(1:00) Ships and buoys combined in a network produce wave information where no sensor exists. With the University of Exeter and the Met Office.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Coverage</span></p>
+<div style="position: absolute; top: 165px; left: 60px; width: 460px; font-size: 0.75em;">
+<p>Ships and buoys combined in a <strong>network</strong> give wave information where no sensor exists.</p>
+<p>&nbsp;</p>
+<p><span class="dtu-blue">Mounet et al.&nbsp;(2023)</span>, <em>Deriving spatial wave data from a network of buoys and ships</em>, Ocean Eng. 281.</p>
+<p>&nbsp;</p>
+<p>PhD thesis: <span class="todo">title</span></p>
+</div>
+<div class="todo" style="position: absolute; top: 165px; left: 560px; width: 680px; height: 470px; font-size: 0.6em;">
+<p>Spatial wave map interpolated from ships and buoys<br>(one before/after panel)</p>
+</div>
+</section>
+<section id="research-outcomes-2.-ships-that-calibrate-themselves" class="slide level2">
+<h2><span class="dtu-kicker">Research outcomes</span> 2. Ships that calibrate themselves</h2>
+<aside class="notes">
+<p>(1:00) A ship’s transfer functions can be learned from its own data, with confidence bands and without a tank test.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Uncertain filter</span></p>
+<div style="position: absolute; top: 165px; left: 60px; width: 460px; font-size: 0.7em;">
+<p>The transfer functions can be <strong>learned from the ship’s own data</strong>, with confidence bands.</p>
+<ul>
+<li><span class="dtu-blue">Mounet et al.&nbsp;(2022)</span>: simultaneous sea state estimation and transfer function tuning, network of DP ships.</li>
+<li><span class="dtu-blue">Nielsen et al.&nbsp;(2022)</span>: parameterised transfer functions with confidence bands.</li>
+<li><span class="dtu-blue">Takami et al.&nbsp;(2026a)</span>: blind identification of incident waves and transfer functions.</li>
+</ul>
+</div>
+<div class="todo" style="position: absolute; top: 165px; left: 560px; width: 680px; height: 470px; font-size: 0.6em;">
+<p>Transfer function before / after tuning,<br>with its confidence band</p>
+</div>
+</section>
+<section id="research-outcomes-3.-correcting-for-speed-and-shallow-water" class="slide level2">
+<h2><span class="dtu-kicker">Research outcomes</span> 3. Correcting for speed and shallow water</h2>
+<aside class="notes">
+<p>(1:00) Speed and water depth distort what a ship “sees”; we now have corrections for both, including following seas. Danish angle: Kattegat and the Belts are shallow waters. [check before saying how relevant the depth effect is there]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Forward speed</span></p>
+<div style="position: absolute; top: 160px; left: 60px; width: 1160px; font-size: 0.7em;">
+<ul>
+<li>Doppler shift for ships advancing <strong>at any forward speed</strong>, including following seas: <span class="dtu-blue">Mounet et al.&nbsp;(2023b, 2025, 2026a)</span>.</li>
+<li>Effect of <strong>water depth</strong> on the Doppler shift and on spectral response calculations: <span class="dtu-blue">Nielsen et al.&nbsp;(2026)</span>.</li>
+</ul>
+</div>
+<div style="position: absolute; top: 260px; left: 200px;">
+<p><a href="https://www.geogebra.org/m/cnsf7r3y"><img data-src="images/Mapping_encounter-intrinsic_wave_frequency.jpg" style="max-width: none; max-height: none;" alt="Mapping between the encounter and intrinsic wave frequencies for a given speed and heading" width="780"></a></p>
+</div>
+<p><span class="todo" style="position: absolute; top: 300px; left: 1030px; width: 200px; font-size: 0.5em;">Highlight the problem zone (following seas)</span></p>
+</section>
+<section id="research-outcomes-4.-a-1.4-m-robot-as-a-directional-wave-sensor" class="slide level2">
+<h2><span class="dtu-kicker">Research outcomes</span> 4. A 1.4 m robot as a directional wave sensor</h2>
+<aside class="notes">
+<p>(1:00) Small autonomous vessels can replace or extend buoys, but only if their hydrodynamics are modelled.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Size</span></p>
+<div style="position: absolute; top: 160px; left: 60px; width: 640px; font-size: 0.65em;">
+<ul>
+<li>Field campaign with the <em>Oshen C-star</em>: <span class="dtu-blue">Mounet et al.&nbsp;(2026b)</span>.</li>
+<li>Hydrodynamic model estimation for a USV: <span class="dtu-blue">Mounet et al.&nbsp;(2024)</span>.</li>
+</ul>
+</div>
+<p><img data-src="images/oshen_cstar.jpg" style="max-width: none; max-height: none; position: absolute; top: 374px; left: 86px; width: 265px; height: 298px; object-fit: cover;" alt="The Oshen C-star autonomous surface vessel at sea"></p>
+<!-- Sensor labels with leader lines -->
+<div style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="serif" font-size="15" fill="black">
+  <line x1="270" y1="453" x2="406" y2="453" stroke="black" stroke-width="1.2"></line>
+  <text x="434" y="458">Weather station</text>
+  <line x1="149" y1="582" x2="414" y2="582" stroke="black" stroke-width="1.2"></line>
+  <text x="436" y="558">9 DoFs Inertial</text>
+  <text x="436" y="577">Measurement Unit (IMU)</text>
+  <line x1="172" y1="604" x2="414" y2="613" stroke="black" stroke-width="1.2"></line>
+  <text x="436" y="617">GPS sensor</text>
+</svg>
+</div>
+<p><span class="dtu-blue fragment" data-fragment-index="1" style="position: absolute; top: 172px; left: 745px; font-size: 0.7em;">Vessel-as-a-buoy versus nearby buoy.</span></p>
+<p><img data-src="images/cstar_vs_buoy_spectra.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 205px; left: 740px; height: 475px;" data-fragment-index="1" alt="Directional wave spectra estimated by the buoy and by the C-star vessel for segments 1187 and 1517"></p>
+</section>
+<section id="research-outcomes-5.-the-same-data-reveals-the-ships-own-condition" class="slide level2">
+<h2><span class="dtu-kicker">Research outcomes</span> 5. The same data reveals the ship’s own condition</h2>
+<aside class="notes">
+<p>(1:30) Motion data that tells you about the waves also tells you about hull loads and stability, a direct link to class and safety. Expect questions from classification societies here.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div style="position: absolute; top: 160px; left: 60px; width: 1160px; font-size: 0.65em;">
+<ul>
+<li>Hull girder structural integrity from wave-induced motions: <span class="dtu-blue">Mekki et al.&nbsp;(2026)</span>, with DNV.</li>
+<li>Data-driven updating of ship roll-motion parameters: <span class="dtu-blue">Takami et al.&nbsp;(2026b)</span>.</li>
+<li>Machine-learning-based wave estimates with uncertainty: <span class="dtu-blue">Nielsen et al.&nbsp;(2024)</span>.</li>
+</ul>
+</div>
+<!-- Diagram: waves in, ship condition out -->
+<div class="dtu-box" style="position: absolute; top: 400px; left: 60px; width: 260px; text-align: center; font-size: 0.75em;">
+<p><strong>Measured motions</strong></p>
+</div>
+<p><img data-src="images/container_ship.jpeg" style="max-width: none; max-height: none; position: absolute; top: 340px; left: 420px; width: 400px;" alt="A large container ship"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 548px; left: 420px; width: 400px;">“<a href="https://www.flickr.com/photos/68359921@N08/48805747472">MILAN MAERSK, MULTRATUG 33, CONTAINERSHIPS NORD &amp; JEANINE PARQUI</a>” by <a href="https://www.flickr.com/photos/68359921@N08">kees torn</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</span></p>
+<div class="dtu-box" style="position: absolute; top: 330px; left: 920px; width: 300px; text-align: center; font-size: 0.75em;">
+<p><strong>Waves</strong> (sea state)</p>
+</div>
+<div class="dtu-box fragment" style="position: absolute; top: 470px; left: 920px; width: 300px; text-align: center; font-size: 0.75em; background-color: #2F3EEA; color: white;">
+<p><strong>Hull loads &amp; stability</strong></p>
+</div>
+<div style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah15" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="black"></path></marker></defs>
+  <path d="M 325 425 L 410 425" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah15)"></path>
+  <path d="M 830 420 C 870 400, 880 360, 912 355" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah15)"></path>
+</svg>
+</div>
+<div class="fragment" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah15b" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2F3EEA"></path></marker></defs>
+  <path d="M 830 440 C 870 460, 880 490, 912 495" fill="none" stroke="#2F3EEA" stroke-width="3" marker-end="url(#ah15b)"></path>
+</svg>
+</div>
+<!-- ======================================================================= -->
+<!-- BLOCK F: OPENNESS AND STANDARDS (14:50–19:40)                            -->
+<!-- ======================================================================= -->
+</section>
+<section id="what-could-this-mean-for-standards-netsse-an-open-reference-implementation" class="slide level2">
+<h2><span class="dtu-kicker">What could this mean for standards?</span> NetSSE: an open reference implementation</h2>
+<aside class="notes">
+<p>(1:00) The methods are open source, documented and reproducible, which is what a standard needs to build on.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div style="position: absolute; top: 165px; left: 60px; width: 720px; font-size: 0.75em;">
+<p><span class="dtu-blue" style="font-weight: 700;">Open-source Python package</span></p>
+<ol type="1">
+<li>Analyse <strong>buoy</strong> data (<a href="https://netsse.readthedocs.io/en/latest/api/netsse/analys/buoy/index.html"><code>analys.buoy</code></a>)</li>
+<li>Analyse <strong>ship</strong> data, wave-buoy analogy (<a href="https://netsse.readthedocs.io/en/latest/api/netsse/analys/sawb/index.html"><code>analys.sawb</code></a>, <a href="https://netsse.readthedocs.io/en/latest/api/netsse/analys/emep/index.html"><code>analys.emep</code></a>)</li>
+<li><strong>Doppler</strong> correction (<a href="https://netsse.readthedocs.io/en/latest/api/netsse/analys/dsa/index.html"><code>analys.dsa</code></a>)</li>
+<li><strong>Simulate</strong> waves and vessel responses (<a href="https://netsse.readthedocs.io/en/latest/api/netsse/simul/ship_resp/index.html"><code>simul.ship_resp</code></a>)</li>
+<li>Retrieve <strong>ERA5</strong> data (<a href="https://netsse.readthedocs.io/en/latest/api/netsse/model/era5/index.html"><code>model.era5</code></a>)</li>
+</ol>
+</div>
+<div style="position: absolute; top: 540px; left: 60px; width: 720px; font-size: 0.6em;">
+<p>Documentation: <a href="https://netsse.readthedocs.io/" class="uri">https://netsse.readthedocs.io/</a></p>
+<p>Source code: <a href="https://gitlab.gbar.dtu.dk/regmo/NetSSE" class="uri">https://gitlab.gbar.dtu.dk/regmo/NetSSE</a></p>
+</div>
+<p><img data-src="images/python_logo.png" style="max-width: none; max-height: none; position: absolute; top: 580px; left: 930px; width: 170px;" alt="Python logo"></p>
+<div style="position: absolute; top: 175px; left: 850px;">
+<p><a href="https://netsse.readthedocs.io/en/latest/index.html"><img data-src="images/netsse_qr_code.png" style="max-width: none; max-height: none;" alt="QR code to netsse.readthedocs.io" width="380"></a></p>
+</div>
+</section>
+<section id="what-could-this-mean-for-standards-where-wave-data-already-enters-standards-and-rules" class="slide level2">
+<h2><span class="dtu-kicker">What could this mean for standards?</span> Where wave data already enters standards and rules</h2>
+<aside class="notes">
+<p>(1:30) Many standards consume wave data. To ask (not assert): does any of them specify how to estimate it from onboard motions, or how good the estimate must be? Someone in the room may know a counterexample.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div style="position: absolute; top: 165px; left: 60px; width: 1160px; font-size: 16px;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Standard / guidance</th>
+<th>What the wave input is used for</th>
+<th>How the wave input is obtained today</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ISO 15016</td>
+<td>Speed trials: correction for waves</td>
+<td><span class="todo">to fill</span></td>
+</tr>
+<tr class="even">
+<td>IMO MSC.1/Circ.1228</td>
+<td>Guidance to the master for avoiding dangerous situations in adverse weather and sea conditions</td>
+<td><span class="todo">to fill</span></td>
+</tr>
+<tr class="odd">
+<td>ISO 19030 <span class="todo">verify</span></td>
+<td>Hull and propeller performance</td>
+<td><span class="todo">to fill</span></td>
+</tr>
+<tr class="even">
+<td>Second-generation intact stability criteria, operational measures <span class="todo">verify</span></td>
+<td></td>
+<td><span class="todo">to fill</span></td>
+</tr>
+<tr class="odd">
+<td>IACS wave scatter data for design loads <span class="todo">verify</span></td>
+<td></td>
+<td><span class="todo">to fill</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="dtu-box" style="position: absolute; top: 560px; left: 60px; width: 1160px; text-align: center; font-size: 0.75em;">
+<p><span class="dtu-blue">Question:</span> does any standard specify <strong>how</strong> to estimate waves from onboard motions, or <strong>how good</strong> the estimate must be?</p>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2><span class="dtu-kicker">What could this mean for standards?</span> Three questions for the committee</h2>
+<aside class="notes">
+<p>(1:30) I would like your view on whether and where this belongs in standardisation. Leave this slide on screen during the Q&amp;A.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="dtu-box" style="position: absolute; top: 170px; left: 60px; width: 1160px; font-size: 0.8em;">
+<p><span class="dtu-blue" style="font-weight: 700;">1.</span> Should there be <strong>minimum metadata and sensor requirements</strong> (IMU position, sampling rate, loading condition) so that ship motion data becomes reusable?</p>
+</div>
+<div class="dtu-box" style="position: absolute; top: 320px; left: 60px; width: 1160px; font-size: 0.8em;">
+<p><span class="dtu-blue" style="font-weight: 700;">2.</span> How should the <strong>uncertainty</strong> of a wave estimate be reported and accepted, for example in performance monitoring or trials?</p>
+</div>
+<div class="dtu-box" style="position: absolute; top: 470px; left: 60px; width: 1160px; font-size: 0.8em;">
+<p><span class="dtu-blue" style="font-weight: 700;">3.</span> Who <strong>owns and shares</strong> the data, given commercial sensitivity versus the public benefit for forecasting?</p>
+</div>
+<!-- ======================================================================= -->
+<!-- BLOCK G: CLOSING (19:40–20:00)                                           -->
+<!-- ======================================================================= -->
+</section>
+<section id="take-home-messages" class="slide level2">
+<h2>Take-home messages</h2>
+<aside class="notes">
+<p>(0:10) Ships can fill the wave observation gap, the methods exist and are open, and standards are the missing piece.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><img data-src="images/sea_horizon.jpg" style="max-width: none; max-height: none; position: absolute; top: 6px; left: 740px; width: 540px; height: 680px; object-fit: cover;" alt="The sea under a cloudy sky"></p>
+<div style="position: absolute; top: 200px; left: 60px; width: 640px; font-size: 0.9em;">
+<ul>
+<li>Ships can <strong>fill the wave observation gap</strong>.</li>
+<li>The methods <strong>exist and are open</strong> (NetSSE).</li>
+<li><strong>Standards</strong> are the missing piece.</li>
+</ul>
+</div>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<div style="position: absolute; top: 150px; left: 40px; width: 590px; margin-top: 0; font-size: 13px; line-height: 1.3;">
+<p>IMO (2020). <em>Fourth IMO Greenhouse Gas Study 2020</em>. International Maritime Organization, London.</p>
+<p>Mekki, M., Nielsen, U.D., Mounet, R.E.G., Storhaug, G. (2026). Data-driven estimation of hull girder structural integrity using wave-induced motions. <em>Mar.&nbsp;Struct.</em> 108, 104036.</p>
+<p>Mounet, R.E.G., Nielsen, U.D., Brodtkorb, A.H., Tannuri, E.A., de Mello, P.C. (2022). Simultaneous sea state estimation and transfer function tuning using a network of dynamically positioned ships. <em>Appl. Ocean Res.</em> 129, 103367.</p>
+<p>Mounet, R.E.G., Chen, J., Nielsen, U.D., Brodtkorb, A.H., Pillai, A.C., Ashton, I.G.C., Steele, E.C.C. (2023a). Deriving spatial wave data from a network of buoys and ships. <em>Ocean Eng.</em> 281, 114892.</p>
+<p>Mounet, R.E.G., Nielsen, U.D., Brodtkorb, A.H. (2023b). Doppler shift approximation for predicting the wave-induced response of advancing vessels in following waves. <em>Proc. ASME OMAE 2023</em>, Vol. 5, V005T06A053.</p>
+<p>Mounet, R.E.G., Nielsen, U.D., Brodtkorb, A.H., Øveraas, H., Dallolio, A., Johansen, T.A. (2024). Data-driven method for hydrodynamic model estimation applied to an unmanned surface vehicle. <em>Measurement</em> 234, 114724.</p>
+<p>Mounet, R.E.G., Nielsen, U.D., Takami, T. (2025). Doppler shift approximation in seakeeping problems: a new formulation for ships advancing at any forward speed. <em>Proc. PRADS 2025</em>.</p>
+<p>Mounet, R.E.G., Nielsen, U.D., Takami, T. (2026a). Approximating the Doppler shift in sea-wave spectra observed from an advancing floating platform. <em>Appl. Math. Model.</em> 157, 116922.</p>
+</div>
+<div style="position: absolute; top: 150px; left: 660px; width: 590px; margin-top: 0; font-size: 13px; line-height: 1.3;">
+<p>Mounet, R.E.G., Nielsen, U.D., Pillai, A.C., Ashton, I.G.C., Holman, F., Laverack, A., Steele, E.C.C. (2026b). Inferring directional wave spectra via motion sensing on ocean-going autonomous surface vessels. <em>Proc. ASME OMAE 2026</em>.</p>
+<p>Nielsen, U.D., Mounet, R.E.G., Brodtkorb, A.H. (2022). Parameterised transfer functions with associated confidence bands. <em>Appl. Ocean Res.</em> 125, 103250.</p>
+<p>Nielsen, U.D., Bingham, H.B., Brodtkorb, A.H., Iseki, T., Jensen, J.J., Mittendorf, M., Mounet, R.E.G., Shao, Y., Storhaug, G., Sørensen, A.J., Takami, T. (2023). Estimating waves via measured ship responses. <em>Sci. Rep.</em> 13, 17342.</p>
+<p>Nielsen, U.D., Iwase, K., Mounet, R.E.G., Storhaug, G. (2024). Uncertainty-associated directional wave spectrum estimation from wave-induced ship responses using machine learning methods. <em>Ocean Eng.</em> 313, 119543.</p>
+<p>Nielsen, U.D., Mounet, R.E.G., Takami, T. (2026). Investigation of depth-effects on the Doppler shift and the consequence in spectral response calculations for ships. <em>Ocean Eng.</em> 351, 124298.</p>
+<p>Takami, T., Nielsen, U.D., Mounet, R.E.G., Jensen, J.J., Mori, R., Komoriyama, Y. (2026a). Blind identification of incident waves and response transfer functions of a marine vessel based on measured responses. <em>Expert Syst. Appl.</em> 296, 129236.</p>
+<p>Takami, T., Nielsen, U.D., Mounet, R.E.G., Sasa, K. (2026b). A data-driven scheme for updating of parameters for ship roll motion. <em>Ocean Eng.</em> 356, 125346.</p>
+<p><span class="todo">Source of the Munk (2002) quote</span></p>
+</div>
+</section>
+<section id="thanks" class="slide level2">
+<h2></h2>
+<aside class="notes">
+<p>(0:10) Let us continue the conversation. Then go back to the “Three questions” slide for the Q&amp;A.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><img data-src="images/asv_fjord.jpg" style="max-width: none; max-height: none; position: absolute; top: 6px; left: 96px; width: 907px; height: 680px; object-fit: cover;" alt="An autonomous surface vessel in a fjord"></p>
+<div style="position: absolute; top: 60px; left: 1010px; width: 262px; text-align: center; font-size: 18px; line-height: 1.3;">
+<p><span class="dtu-blue" style="font-weight: 700; font-size: 1.4em;">Thank you!</span></p>
+<p><a href="mailto:regmo@dtu.dk">regmo@dtu.dk</a></p>
+</div>
+<div style="position: absolute; top: 170px; left: 1051px;">
+<p><a href="https://netsse.readthedocs.io/en/latest/index.html"><img data-src="images/netsse_qr_code.png" style="max-width: none; max-height: none;" alt="QR code to netsse.readthedocs.io" width="180"></a></p>
+</div>
+<p><span style="position: absolute; top: 355px; left: 1010px; width: 262px; text-align: center; font-size: 12px;"><code>netsse.readthedocs.io</code></span></p>
+<div class="todo" style="position: absolute; top: 400px; left: 1010px; width: 262px; height: 200px; font-size: 12px;">
+<p>Acknowledgements:<br>funders of WEFOSWAB + logos</p>
+</div>
+<p><a href="#//questions" style="position: absolute; top: 625px; left: 1010px; width: 262px; text-align: center; font-size: 14px;">← Back to the questions</a></p>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p><span class="dtu-date">10 November 2026</span> Presentation to DS/S-262 committee</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="DS_presentation_10-11-2026_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+              if (!link.classList.contains('no-external-icon')) {
+              }
+            }
+          }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
