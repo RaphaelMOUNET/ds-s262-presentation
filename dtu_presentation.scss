@@ -1,0 +1,671 @@
+/*-- scss:defaults --*/
+
+// =============================================================================
+// DTU presentation theme for Quarto / reveal.js
+// Replicates "DTU_Template_16_9 - Blue - ENG.potx"
+//
+// Geometry: the PowerPoint slide is 13.33 x 7.5 in. With reveal.js set to
+// width: 1280 / height: 720, one inch = 96 px and one point = 1.333 px, so all
+// measurements below are taken straight from the template.
+//
+// Required YAML (see dtu_demo.qmd):
+//   format:
+//     revealjs:
+//       theme: dtu_presentation.scss
+//       width: 1280
+//       height: 720
+//       margin: 0
+//       slide-number: c
+// =============================================================================
+
+// ---- DTU colour scheme (theme1.xml of the template) -------------------------
+$dtu-blue:        #2F3EEA !default;  // accent2, bars, links, logo
+$dtu-red:         #990000 !default;  // dk2 / accent1 (DTU corporate red)
+$dtu-green:       #1FD082 !default;  // accent3
+$dtu-navy:        #171748 !default;  // accent4
+$dtu-yellow:      #F6D04D !default;  // accent5
+$dtu-orange:      #FC7634 !default;  // accent6
+$dtu-purple:      #79238E !default;  // lt2
+$dtu-black:       #000000 !default;  // tx1
+$dtu-white:       #FFFFFF !default;  // bg1
+
+// Hex digits (without "#") used to colour the embedded SVG logo
+$dtu-logo-fill-blue:  "2F3EEA" !default;
+$dtu-logo-fill-white: "FFFFFF" !default;
+
+// Fixed footer text (the template hard-codes it on the master)
+$dtu-footer-institution: "Technical University of Denmark" !default;
+
+// ---- Fonts (template font scheme is Arial for headings and body) ------------
+$font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif !default;
+$presentation-heading-font: $font-family-sans-serif !default;
+
+// ---- Base sizes ----------------------------------------------------------------
+// Body text 18 pt = 24 px. All em-based sizes below are relative to this.
+$presentation-font-size-root: 24px !default;
+$presentation-line-height: 1.2 !default;
+$presentation-block-margin: 10px !default;
+
+// ---- Colours mapped to Quarto variables ----------------------------------------
+$body-bg: $dtu-white !default;
+$body-color: $dtu-black !default;
+$link-color: $dtu-blue !default;
+$selection-bg: lighten($dtu-blue, 30%) !default;
+$presentation-list-bullet-color: $dtu-black !default;
+
+// ---- Headings -------------------------------------------------------------------
+$presentation-heading-color: $dtu-black !default;
+$presentation-heading-font-weight: 700 !default;
+$presentation-heading-line-height: 1.2 !default;
+$presentation-heading-text-transform: none !default;
+$presentation-heading-letter-spacing: normal !default;
+$presentation-h1-font-size: 3.3333em !default;  // 60 pt section slides (80 px)
+$presentation-h2-font-size: 1.6667em !default;  // 30 pt slide titles (40 px)
+$presentation-h3-font-size: 1.3333em !default;  // 24 pt (32 px)
+$presentation-h4-font-size: 1em !default;       // 18 pt (24 px)
+$presentation-title-slide-text-align: left !default;
+$presentation-slide-text-align: left !default;
+
+// ---- Code ------------------------------------------------------------------------
+$code-block-font-size: 0.75em !default;
+$code-color: $dtu-navy !default;
+$code-block-border-color: lighten($dtu-black, 80%) !default;
+
+// ---- Callouts in DTU colours -------------------------------------------------------
+$callout-color-note: $dtu-blue !default;
+$callout-color-tip: $dtu-green !default;
+$callout-color-important: $dtu-red !default;
+$callout-color-caution: $dtu-orange !default;
+$callout-color-warning: $dtu-yellow !default;
+
+// ---- Text on dark backgrounds (e.g. blue title slide) -------------------------------
+$dark-bg-text-color: $dtu-white !default;
+$dark-bg-link-color: $dtu-white !default;
+$light-bg-text-color: $dtu-black !default;
+$light-bg-link-color: $dtu-blue !default;
+
+// ---- Template geometry (px on a 1280 x 720 slide) ----------------------------------
+$dtu-content-left:   186px !default;  // 1.94 in
+$dtu-content-right:  116px !default;  // 13.33 - 12.12 in
+$dtu-title-top:       45px !default;  // 0.47 in
+$dtu-title-height:   102px !default;  // 1.06 in, text anchored to the bottom
+$dtu-body-gap:        33px !default;  // 1.87 in - (0.47 + 1.06) in
+$dtu-front-left:      26px !default;  // 0.27 in (title slide)
+$dtu-front-width:   1138px !default;  // 11.85 in
+$dtu-photo-text-width: 690px !default;  // text column left of the photo (Front A with photo)
+
+// Rounded banner behind the title-slide title + subtitle (not in the template)
+$dtu-banner-show:    true !default;   // false = no banner at all
+$dtu-banner-left:     10px !default;
+$dtu-banner-top:     295px !default;
+$dtu-banner-width:  1280px - 2 * $dtu-banner-left !default;
+$dtu-banner-height:  200px !default;
+$dtu-banner-radius:   5px !default;
+$dtu-banner-opacity: 0.75 !default;
+
+// Logo SVG path (extracted from the template's vector logo, viewBox 0 0 1000 1458)
+$dtu-logo-path: "M212.8 1235.2 C488.4 1342.4 511.6 1342.4 787.2 1235.2 C787.2 1235.2 787.2 1235.2 1000.0 1347.0 C1000.0 1347.0 1000.0 1347.0 787.2 1458.5 C511.6 1351.5 488.4 1351.5 212.8 1458.5 C212.8 1458.5 212.8 1458.5 0.0 1347.0 C0.0 1347.0 0.0 1347.0 212.8 1235.2 Z M212.8 958.8 C488.4 1066.2 511.6 1066.2 787.2 958.8 C787.2 958.8 787.2 958.8 1000.0 1070.8 C1000.0 1070.8 1000.0 1070.8 787.2 1182.4 C511.6 1075.3 488.4 1075.3 212.8 1182.4 C212.8 1182.4 212.8 1182.4 0.0 1070.8 C0.0 1070.8 0.0 1070.8 212.8 958.8 Z M212.8 682.8 C488.4 790.2 511.6 790.2 787.2 682.8 C787.2 682.8 787.2 682.8 1000.0 794.7 C1000.0 794.7 1000.0 794.7 787.2 906.4 C511.6 799.2 488.4 799.2 212.8 906.4 C212.8 906.4 212.8 906.4 0.0 794.7 C0.0 794.7 0.0 794.7 212.8 682.8 Z M137.5 62.0 L137.5 467.6 C137.5 467.6 137.5 467.6 184.3 467.6 C205.1 467.6 217.4 464.4 227.0 453.0 C241.7 435.3 243.0 399.5 243.0 327.4 C243.0 327.4 243.0 327.4 243.0 201.9 C243.0 130.1 241.7 94.3 227.0 76.6 C217.4 65.2 205.1 62.0 184.3 62.0 C184.3 62.0 184.3 62.0 137.5 62.0 Z M373.5 0.0 C373.5 0.0 373.5 0.0 623.0 0.0 C627.0 0.0 629.4 1.1 631.2 2.9 C632.8 4.5 634.2 6.9 634.2 11.0 C634.2 11.0 634.2 11.0 634.2 55.8 C634.2 59.8 632.8 62.2 631.2 63.8 C629.4 65.7 627.0 66.8 623.0 66.8 C623.0 66.8 623.0 66.8 543.1 66.8 C543.1 66.8 543.1 66.8 543.1 518.7 C543.1 522.7 542.0 525.1 540.2 526.7 C538.6 528.5 536.2 529.6 532.1 529.6 C532.1 529.6 532.1 529.6 464.3 529.6 C460.3 529.6 457.9 528.5 456.0 526.7 C454.2 525.1 453.1 522.7 453.1 518.7 C453.1 518.7 453.1 518.7 453.1 66.8 C453.1 66.8 453.1 66.8 373.5 66.8 C369.5 66.8 367.1 65.7 365.2 63.8 C363.4 62.2 362.3 59.8 362.3 55.8 C362.3 55.8 362.3 55.8 362.3 11.0 C362.3 6.9 363.4 4.5 365.2 2.9 C367.1 1.1 369.5 0.0 373.5 0.0 Z M64.4 0.0 C64.4 0.0 64.4 0.0 197.1 0.0 C248.6 0.0 280.1 11.8 299.3 36.3 C327.4 70.0 328.2 124.5 328.2 207.8 C328.2 207.8 328.2 207.8 328.2 321.8 C328.2 405.1 327.4 459.6 299.3 493.3 C280.1 517.9 248.6 529.6 197.1 529.6 C197.1 529.6 197.1 529.6 64.4 529.6 C60.4 529.6 58.0 528.5 56.3 526.7 C54.5 525.1 53.4 522.7 53.4 518.7 C53.4 518.7 53.4 518.7 53.4 11.0 C53.4 6.9 54.5 4.5 56.3 2.9 C58.0 1.1 60.4 0.0 64.4 0.0 Z M680.8 0.0 C680.8 0.0 680.8 0.0 742.8 0.0 C746.8 0.0 749.2 1.1 751.1 2.9 C753.0 4.5 754.0 6.9 754.0 11.0 C754.0 11.0 754.0 11.0 754.0 385.7 C754.0 426.3 757.8 448.7 769.8 462.1 C778.6 472.0 790.4 476.3 805.9 476.3 C823.0 476.3 835.2 471.5 843.8 462.1 C856.6 448.2 859.5 425.0 859.5 385.7 C859.5 385.7 859.5 385.7 859.5 11.0 C859.5 6.9 860.6 4.5 862.5 2.9 C864.1 1.1 866.8 0.0 870.5 0.0 C870.5 0.0 870.5 0.0 932.7 0.0 C936.7 0.0 939.2 1.1 940.8 2.9 C942.6 4.5 943.7 6.9 943.7 11.0 C943.7 11.0 943.7 11.0 943.7 386.0 C943.7 436.5 937.8 470.1 913.5 498.4 C892.9 522.5 859.3 536.4 806.9 536.4 C755.4 536.4 721.4 523.3 698.7 498.4 C677.1 474.7 669.9 440.5 669.9 386.0 C669.9 386.0 669.9 386.0 669.9 11.0 C669.9 6.9 671.0 4.5 672.6 2.9 C674.4 1.1 676.8 0.0 680.8 0.0 Z";
+
+
+/*-- scss:rules --*/
+
+@function dtu-logo($fill) {
+  @return url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1458'%3E%3Cpath fill='%23#{$fill}' d='#{$dtu-logo-path}'/%3E%3C/svg%3E");
+}
+
+// -----------------------------------------------------------------------------
+// Slide "chrome": top bar, bottom bar, small logo, footer and slide number.
+// These sit outside the scaled slide, so they are sized with --dtu-u, which is
+// one slide pixel at the current zoom level. With margin: 0 on a 16:9 screen
+// the chrome lines up exactly with the slide.
+// -----------------------------------------------------------------------------
+.reveal {
+  --dtu-u: min(calc(100vw / 1280), calc(100vh / 720));
+}
+
+// Top bar (0.06 in) + bottom bar (0.35 in) + "Technical University of Denmark"
+.reveal::before {
+  content: $dtu-footer-institution;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  padding-left: calc(var(--dtu-u) * 186);
+  background:
+    linear-gradient($dtu-blue, $dtu-blue) top left / 100% calc(var(--dtu-u) * 6) no-repeat,
+    linear-gradient($dtu-blue, $dtu-blue) bottom left / 100% calc(var(--dtu-u) * 34) no-repeat;
+  color: $dtu-white;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--dtu-u) * 9.33);   // 7 pt
+  line-height: calc(var(--dtu-u) * 34);
+  white-space: nowrap;
+}
+
+// Small logo, top-left (0.28 in from the edges, 0.45 x 0.66 in)
+.reveal::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--dtu-u) * 27);
+  left: calc(var(--dtu-u) * 27);
+  width: calc(var(--dtu-u) * 43);
+  height: calc(var(--dtu-u) * 63);
+  z-index: 1;
+  pointer-events: none;
+  background: dtu-logo($dtu-logo-fill-blue) center / contain no-repeat;
+}
+
+// White logo whenever the current slide has a dark background, and always on
+// the title slide
+.reveal.has-dark-background::after,
+.reveal:has(.slides section#title-slide.present)::after {
+  background-image: dtu-logo($dtu-logo-fill-white);
+}
+
+// Footer bar content. Use in YAML, e.g.
+//   footer: "[3 November 2026]{.dtu-date} Presentation title"
+// Plain text goes to the right-aligned "title" field of the template.
+.reveal .footer,
+.reveal .footer.footer-default,
+.reveal .footer.has-dark-background,
+.reveal .footer.has-light-background {
+  // !important: Quarto's footer.css is loaded after the theme
+  position: fixed !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 100%;
+  height: calc(var(--dtu-u) * 34);
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  text-align: right;
+  color: $dtu-white;
+  font-family: $font-family-sans-serif;
+  font-size: calc(var(--dtu-u) * 9.33);
+  line-height: calc(var(--dtu-u) * 34);
+  font-weight: 400;
+
+  p {
+    margin: 0;
+    line-height: inherit;
+    padding-right: calc(var(--dtu-u) * 116);
+    white-space: nowrap;
+  }
+
+  a {
+    color: $dtu-white;
+  }
+
+  // Date field: right-aligned in the box 0.28 in - 1.49 in
+  .dtu-date {
+    position: absolute;
+    left: calc(var(--dtu-u) * 27);
+    width: calc(var(--dtu-u) * 116);
+    text-align: right;
+    font-weight: 700;
+  }
+}
+
+// Slide number (bold, white, at 12.58 in)
+.reveal .slide-number,
+.reveal.has-logo .slide-number.has-dark-background,
+.reveal.has-logo .slide-number.has-light-background,
+.reveal .slide-number.has-dark-background,
+.reveal .slide-number.has-light-background,
+.reveal.has-logo .slide-number {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 0 !important;
+  left: calc(100% - var(--dtu-u) * 72);
+  z-index: 31;
+  padding: 0;
+  height: calc(var(--dtu-u) * 34);
+  line-height: calc(var(--dtu-u) * 34);
+  background-color: transparent;
+  color: $dtu-white;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--dtu-u) * 9.33) !important;
+
+  a {
+    color: inherit;
+  }
+}
+
+// Progress bar (if enabled) drawn as a faint white line inside the footer bar
+.reveal .progress {
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  z-index: 3;
+}
+
+// Move the menu button out of the footer bar (top-right corner)
+.reveal .slide-menu-button {
+  left: auto !important;
+  right: calc(var(--dtu-u) * 14);
+  bottom: auto !important;
+  top: calc(var(--dtu-u) * 14);
+  opacity: 0.35;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Content slides ("One content" layout)
+// -----------------------------------------------------------------------------
+.reveal .slides > section:not(.stack),
+.reveal .slides > section.stack > section {
+  box-sizing: border-box;
+  padding: $dtu-title-top $dtu-content-right 0 $dtu-content-left;
+}
+
+// Slide title: 30 pt bold, bottom-anchored in a 1.06 in high box
+.reveal .slides section > h2 {
+  display: table-cell;
+  vertical-align: bottom;
+  height: $dtu-title-height;
+  width: 1280px - $dtu-content-left - $dtu-content-right;
+  padding: 0;
+  margin: 0;
+}
+
+.reveal .slides section > h2 + * {
+  margin-top: $dtu-body-gap;
+}
+
+// Quarto renders .columns as an inline box, which ignores vertical margins
+.reveal .slides section > h2 + .columns {
+  display: block;
+}
+
+// Section label above the slide title, e.g.
+//   ## [Introduction]{.dtu-kicker} Who am I?
+.reveal .dtu-kicker {
+  display: block;
+  margin-bottom: 0.1em;
+  font-size: 0.4em;                 // 12 pt (16 px) inside a 30 pt title
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: mix($dtu-blue, $dtu-white, 45%);
+}
+
+.reveal h3,
+.reveal h4 {
+  margin-top: 0.6em;
+  margin-bottom: 0.3em;
+}
+
+// Bullets: level 1 "•", level 2 "–", level 3 "•", level 4 "–", level 5 "»"
+// Indent per level 0.217 in = 21 px, 20 % space before each paragraph
+.reveal ul,
+.reveal ol,
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ul,
+.reveal ol ol {
+  display: block;
+  margin: 0;
+  padding-left: 21px;
+}
+
+.reveal ul,
+.reveal ul ul,
+.reveal ol ul,
+.reveal ul ul ul {
+  list-style: none;
+}
+
+.reveal ul {
+
+  > li {
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: -21px;
+      color: $presentation-list-bullet-color;
+    }
+  }
+
+  ul > li::before { content: "–"; }
+  ul ul > li::before { content: "•"; }
+  ul ul ul > li::before { content: "–"; }
+  ul ul ul ul > li::before { content: "»"; }
+}
+
+// Task lists keep their check boxes
+.reveal ul.task-list > li::before {
+  content: none;
+}
+
+.reveal li {
+  margin-top: 0.2em;
+}
+
+.reveal ol > li {
+  padding-left: 0.2em;
+}
+
+// Pictures in the template have no frame
+.reveal img {
+  border: none;
+  box-shadow: none;
+}
+
+// Tables: thin rules, bold header with a blue rule
+.reveal table {
+  border-collapse: collapse;
+
+  th {
+    font-weight: 700;
+    border-bottom: 2px solid $dtu-blue;
+  }
+
+  td {
+    border-bottom: 1px solid lighten($dtu-black, 80%);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Text colour on dark backgrounds (title slide "Front A", any blue slide)
+// -----------------------------------------------------------------------------
+.reveal .slides section.has-dark-background {
+  &,
+  h1, h2, h3, h4, h5, h6,
+  p, li, .subtitle, .quarto-title-author-name, .quarto-title-affiliation, .date,
+  .dtu-kicker {
+    color: $dtu-white;
+  }
+
+  ul > li::before {
+    color: $dtu-white;
+  }
+
+  a {
+    color: $dtu-white;
+    text-decoration: underline;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Title slide ("Front A" / "Front B")
+//   Front A (blue):  title-slide-attributes: data-background-color: "#2F3EEA"
+//   Front B (white): no title-slide-attributes
+//   Front A with a photo on the right and a long title (not in the template):
+//     title-slide-attributes:
+//       data-background-color: "#2F3EEA"
+//       data-background-image: images/photo.jpg
+//       data-background-size: "42% 100%"
+//       data-background-position: "right"
+//       data-dtu-front: "photo"
+// Subtitle sits above the title, as in the template.
+// -----------------------------------------------------------------------------
+.reveal .slides section#title-slide,
+.reveal .slides section.quarto-title-block {
+  top: 0 !important;
+  height: 720px !important;
+  padding: 0;
+  text-align: left;
+  color: $dtu-white;
+
+  // Rounded banner behind subtitle + title. Fixed geometry: it fits a subtitle
+  // of one line and a title of up to two lines. Adjust the $dtu-banner-* values
+  // in the defaults section if your title is longer or shorter.
+  // Set $dtu-banner-show: false to remove the banner entirely.
+  @if $dtu-banner-show {
+    &::before {
+      content: "";
+      position: absolute;
+      left: $dtu-banner-left;
+      top: $dtu-banner-top;
+      width: $dtu-banner-width;
+      height: $dtu-banner-height;
+      box-sizing: border-box;
+      border-radius: $dtu-banner-radius;
+      background: linear-gradient(135deg, lighten($dtu-blue, 4%), darken($dtu-blue, 12%));
+      box-shadow: 0 10px 28px rgba($dtu-navy, 0.35);
+      opacity: $dtu-banner-opacity;
+      pointer-events: none;
+    }
+
+    // On a blue ("Front A") slide the banner would blend in: use navy instead
+    &.has-dark-background::before {
+      background: linear-gradient(135deg, lighten($dtu-navy, 4%), darken($dtu-navy, 3%));
+    }
+  }
+
+  .subtitle,
+  h1.title {
+    color: $dtu-white;
+  }
+
+  .subtitle {
+    position: absolute;
+    left: $dtu-front-left;
+    width: $dtu-front-width;
+    bottom: 720px - 353px;          // bottom of the box at 3.68 in
+    margin: 0;
+    font-size: 40px;                 // 30 pt
+    line-height: 1.1;
+    font-weight: 400;
+    color: inherit;
+  }
+
+  h1.title {
+    position: absolute;
+    left: $dtu-front-left;
+    top: 372px;                      // 3.88 in
+    width: $dtu-front-width;
+    margin: 0;
+    font-size: 106.67px;             // 80 pt
+    line-height: 0.93;
+    font-weight: 700;
+    letter-spacing: normal;
+    color: $dtu-white;
+  }
+
+  .quarto-title-authors {
+    position: absolute;
+    left: $dtu-front-left;
+    bottom: 34px + 46px;
+    width: $dtu-front-width;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0 2em;
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .quarto-title-author {
+    padding: 0;
+  }
+
+  .quarto-title-author-name {
+    font-weight: 700;
+    margin: 0;
+    color: $dtu-white;
+  }
+
+  .quarto-title-affiliation {
+    font-size: 20px;
+    margin: 0;
+    color: $dtu-white;
+  }
+
+  .date {
+    position: absolute;
+    left: $dtu-front-left;
+    bottom: 34px + 14px;
+    margin: 0;
+    font-size: 20px;
+    color: $dtu-white;
+  }
+}
+
+// Front A with a photo: narrower text column, smaller title
+.reveal .slides section#title-slide[data-dtu-front="photo"] {
+  .subtitle {
+    top: 110px;
+    bottom: auto;
+    width: $dtu-photo-text-width;
+    font-size: 28px;
+  }
+
+  h1.title {
+    top: 190px;
+    width: $dtu-photo-text-width;
+    font-size: 44px;                 // 33 pt, fits three lines
+    line-height: 1.1;
+  }
+
+  .quarto-title-authors {
+    width: $dtu-photo-text-width;
+  }
+
+  .quarto-title-author-email {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .quarto-title-affiliation {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Section slides (level-1 headings "# Section"): title in the "Front" position
+// -----------------------------------------------------------------------------
+.reveal .slides section.title-slide.level1:not(#title-slide) {
+  top: 0 !important;
+  height: 720px !important;
+  padding: 0;
+
+  > h1 {
+    position: absolute;
+    left: $dtu-front-left;
+    top: 372px;
+    width: $dtu-front-width;
+    margin: 0;
+    font-size: $presentation-h1-font-size;
+    line-height: 0.93;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Pause slides ("Front/Pause A" and "Front/Pause B"): big centred logo only.
+//   Pause A (blue):  ## {.dtu-pause background-color="#2F3EEA"}
+//   Pause B (white): ## {.dtu-pause}
+// -----------------------------------------------------------------------------
+.reveal .slides section.dtu-pause {
+  top: 0 !important;
+  height: 720px !important;
+  padding: 0;
+
+  > :not(aside) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 512px;                     // 5.33 in
+    top: 174px;                      // 1.81 in
+    width: 251px;                    // 2.61 in
+    height: 366px;                   // 3.81 in
+    background: dtu-logo($dtu-logo-fill-blue) center / contain no-repeat;
+  }
+
+  &.has-dark-background::before {
+    background-image: dtu-logo($dtu-logo-fill-white);
+  }
+}
+
+// Pause slides: no small logo, footer or slide number
+.reveal:has(.slides section.present.dtu-pause) {
+  // visibility (not display): Quarto sets display: block inline
+  &::after,
+  .footer,
+  .slide-number {
+    visibility: hidden;
+  }
+
+  // Pause B keeps the two bars but not the footer text
+  &::before {
+    color: transparent;
+  }
+}
+
+// Pause A: nothing but the logo
+.reveal:has(.slides section.present.dtu-pause.has-dark-background)::before {
+  display: none;
+}
+
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
+.reveal {
+  .dtu-blue   { color: $dtu-blue; }
+  .dtu-red    { color: $dtu-red; }
+  .dtu-green  { color: $dtu-green; }
+  .dtu-navy   { color: $dtu-navy; }
+  .dtu-yellow { color: $dtu-yellow; }
+  .dtu-orange { color: $dtu-orange; }
+  .dtu-purple { color: $dtu-purple; }
+
+  .bg-dtu-blue   { background-color: $dtu-blue;   color: $dtu-white; }
+  .bg-dtu-red    { background-color: $dtu-red;    color: $dtu-white; }
+  .bg-dtu-green  { background-color: $dtu-green;  color: $dtu-black; }
+  .bg-dtu-navy   { background-color: $dtu-navy;   color: $dtu-white; }
+  .bg-dtu-yellow { background-color: $dtu-yellow; color: $dtu-black; }
+  .bg-dtu-orange { background-color: $dtu-orange; color: $dtu-black; }
+  .bg-dtu-purple { background-color: $dtu-purple; color: $dtu-white; }
+
+  // Small print, e.g. references or figure sources
+  .dtu-small {
+    font-size: 0.667em;   // 12 pt
+  }
+
+  // Image credits and licences, e.g. [Photo by ...]{.dtu-credit}
+  .dtu-credit {
+    display: block;
+    font-size: 10px;                // 7.5 pt
+    line-height: 1.25;
+    color: lighten($dtu-black, 35%);
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  // Greyed-out text, e.g. "- [Wrap-up]{.dtu-dim}" on outline slides
+  .dtu-dim {
+    color: lighten($dtu-black, 75%);
+  }
+
+  li:has(> .dtu-dim)::before {
+    color: lighten($dtu-black, 75%);
+  }
+
+  // Framed box for key facts, e.g. ::: dtu-box
+  .dtu-box {
+    box-sizing: border-box;
+    padding: 0.35em 0.6em;
+    border: 2px solid $dtu-blue;
+    border-radius: 12px;
+    background-color: lighten($dtu-black, 95%);
+
+    > :first-child { margin-top: 0; }
+    > :last-child  { margin-bottom: 0; }
+  }
+}

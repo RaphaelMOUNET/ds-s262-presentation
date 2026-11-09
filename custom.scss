@@ -1,0 +1,61 @@
+/*-- scss:defaults --*/
+// Title-slide banner: set to false to remove it, true to show it
+$dtu-banner-show: false;
+
+// Banner geometry (used only when $dtu-banner-show is true)
+// $dtu-banner-left: 40px;
+// $dtu-banner-top: 150px;
+// $dtu-banner-height: 200px;
+
+/*-- scss:rules --*/
+// Placeholder for content still to be filled in by the author (DS 10-11-2026 deck)
+.reveal .todo {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.15em 0.4em;
+  border: 2px dashed #990000;
+  border-radius: 6px;
+  color: #990000;
+  background-color: rgba(153, 0, 0, 0.05);
+  font-style: italic;
+}
+.reveal div.todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+// Small tag linking an outcome slide to one of the three difficulties
+.reveal .dtu-tag {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  background-color: #2F3EEA;
+  color: white;
+  font-size: 0.6em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+// Horizontal timeline on the "Who am I?" slide
+.reveal .dtu-timeline {
+  position: relative;
+  border-top: 4px solid #2F3EEA;
+}
+.reveal .dtu-timeline .tl-item {
+  position: absolute;
+  top: -12px;
+  width: 172px;
+  font-size: 15px;
+  line-height: 1.25;
+}
+.reveal .dtu-timeline .tl-item::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background-color: #2F3EEA;
+  border: 2px solid white;
+}

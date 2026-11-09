@@ -1,0 +1,6 @@
+/*-- scss:defaults --*/
+// Overrides for DS_presentation_10-11-2026.qmd only.
+// Slide titles moved up so that they line up with the small DTU logo
+// (logo spans y = 27-90 px; the title box is bottom-anchored).
+$dtu-title-top: 0px;
+$dtu-title-height: 92px;

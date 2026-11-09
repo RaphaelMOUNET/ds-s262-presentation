@@ -1,0 +1,7 @@
+netsse_lecture.*
+netsse_lecture_files/
+*_files/
+DS_presentation_10-11-2026.html
+_tmp_check.html
+.quarto/
+*.pdf
