@@ -488,7 +488,7 @@ ship's position</th>
 <p><span style="position: absolute; top: 120px; left: 1060px; width: 200px; text-align: right; font-style: italic; font-size: 0.65em;">Nielsen et al.&nbsp;(2023)</span></p>
 <!-- Hydrodynamic transfer functions (the "filter") -->
 <div class="fragment" data-fragment-index="3" style="position: absolute; top: 326px; left: 347px; width: 611px; height: 359px; border-radius: 50%; background: linear-gradient(to bottom, rgba(47,62,234,0) 0%, rgba(47,62,234,1) 100%); z-index: 5; color: white; text-align: center; font-size: 0.75em;">
-<p><span style="position: absolute; left: 0; right: 0; bottom: 28px;">Transfer functions (the “filter”)</span></p>
+<p><span style="position: absolute; left: 0; right: 0; bottom: 48px; line-height: 1.25;">Transfer functions (the “filter”)<br>or <em>Machine learning</em></span></p>
 </div>
 <!-- The buoy is shown first and is replaced by the ship (step 6) -->
 <p><img data-src="images/wave_buoy_column.png" class="fragment fade-out" style="max-width: none; max-height: none; position: absolute; top: 152px; left: 530px; width: 224px; height: 460px; object-fit: cover;" data-fragment-index="6" alt="A yellow wave buoy in the water"></p>
@@ -584,9 +584,8 @@ ship's position</th>
 <li>Basic ship particulars and the loading condition</li>
 </ul>
 </div>
-<p><span class="todo" style="position: absolute; top: 400px; left: 60px; width: 560px; font-size: 0.6em;">Where these sensors are often already installed (e.g.&nbsp;hull monitoring, DP, …)</span></p>
-<p><img data-src="images/vessel_6dof_motions.png" style="max-width: none; max-height: none; position: absolute; top: 180px; left: 680px; width: 540px;" alt="The six rigid-body motions of a vessel: surge, sway, heave, roll, pitch and yaw"></p>
-<p><span class="todo" style="position: absolute; top: 540px; left: 680px; width: 540px; font-size: 0.55em;">Mark the three sensors on the ship outline (Oshen sensor-label style)</span></p>
+<p><img data-src="images/Illustration_ship_sensors_Nielsen_2018.png" style="max-width: none; max-height: none; position: absolute; top: 170px; left: 640px; width: 600px;" alt="Illustration of a ship with onboard sensors: ship speed, course, wind and motion sensors on the bridge, vertical accelerometers at bow and stern, optical strain sensors on deck, relative wave height sensors and a green water sensor at the bow"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 540px; left: 640px; width: 600px; font-size: 12px;">Illustration from <span class="dtu-blue">Nielsen (2018)</span>, doctoral thesis.</span></p>
 <!-- ======================================================================= -->
 <!-- BLOCK E: MAIN RESEARCH OUTCOMES (9:20–14:50)                             -->
 <!-- ======================================================================= -->
@@ -607,16 +606,16 @@ ship's position</th>
           display:block!important;
       }</style></aside>
 <p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Coverage</span></p>
-<div style="position: absolute; top: 165px; left: 60px; width: 460px; font-size: 0.75em;">
+<!-- Text in a compact band above the figure -->
+<div style="position: absolute; top: 125px; left: 60px; width: 560px; font-size: 0.75em;">
 <p>Ships and buoys combined in a <strong>network</strong> give wave information where no sensor exists.</p>
-<p>&nbsp;</p>
-<p><span class="dtu-blue">Mounet et al.&nbsp;(2023)</span>, <em>Deriving spatial wave data from a network of buoys and ships</em>, Ocean Eng. 281.</p>
-<p>&nbsp;</p>
-<p>PhD thesis: <span class="todo">title</span></p>
 </div>
-<div class="todo" style="position: absolute; top: 165px; left: 560px; width: 680px; height: 470px; font-size: 0.6em;">
-<p>Spatial wave map interpolated from ships and buoys<br>(one before/after panel)</p>
+<div style="position: absolute; top: 125px; left: 660px; width: 580px; font-size: 0.65em; line-height: 1.35;">
+<p><span class="dtu-blue">Mounet et al.&nbsp;(2023a)</span>, <em>Deriving spatial wave data from a network of buoys and ships</em>, Ocean Eng. 281.</p>
 </div>
+<!-- Wide figure (4209 x 1336 px), full slide width -->
+<p><img data-src="images/Mounet_et_al._wave_map_2023.png" style="max-width: none; max-height: none; position: absolute; top: 205px; left: 40px; width: 1200px;" alt="Three maps of annual-averaged RMSE of significant wave height off south-west England, from 0 to 0.6 m, for three network configurations of ships and wave buoys; the third model uses two wave buoys"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 605px; left: 40px; width: 1200px; text-align: right; font-size: 12px;">From <span class="dtu-blue">Mounet et al.&nbsp;(2023a)</span>.</span></p>
 </section>
 <section id="research-outcomes-2.-ships-that-calibrate-themselves" class="slide level2">
 <h2><span class="dtu-kicker">Research outcomes</span> 2. Ships that calibrate themselves</h2>
@@ -634,7 +633,7 @@ ship's position</th>
           display:block!important;
       }</style></aside>
 <p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Uncertain filter</span></p>
-<div style="position: absolute; top: 165px; left: 60px; width: 460px; font-size: 0.7em;">
+<div style="position: absolute; top: 110px; left: 60px; width: 570px; font-size: 0.6em;">
 <p>The transfer functions can be <strong>learned from the ship’s own data</strong>, with confidence bands.</p>
 <ul>
 <li><span class="dtu-blue">Mounet et al.&nbsp;(2022)</span>: simultaneous sea state estimation and transfer function tuning, network of DP ships.</li>
@@ -642,9 +641,36 @@ ship's position</th>
 <li><span class="dtu-blue">Takami et al.&nbsp;(2026a)</span>: blind identification of incident waves and transfer functions.</li>
 </ul>
 </div>
-<div class="todo" style="position: absolute; top: 165px; left: 560px; width: 680px; height: 470px; font-size: 0.6em;">
-<p>Transfer function before / after tuning,<br>with its confidence band</p>
+<!-- Machine-learning teaser + case study (appears on one click, together with the plots) -->
+<div class="fragment" data-fragment-index="1" style="position: absolute; top: 262px; left: 60px; width: 570px; font-size: 0.62em; font-style: italic;">
+<p>… moreover, <strong>machine learning</strong> methods can estimate the sea state <strong>without any transfer functions</strong> (<span class="dtu-blue">Nielsen et al., 2024a, 2024b</span>).</p>
 </div>
+<div class="dtu-box fragment" data-fragment-index="1" style="position: absolute; top: 335px; left: 60px; width: 570px; height: 270px; font-size: 14px; line-height: 1.35;">
+<div style="font-weight: 700; color: #2F3EEA; margin-bottom: 6px;">Case study: midsize container vessel (<a href="#/references">Storhaug et al., 2007</a>)</div>
+<div style="display: flex; gap: 12px; align-items: flex-start;">
+  <img src="images/Storhaug_et_al._2007_container_vessel.png" alt="A red container vessel at sea, loaded with containers" style="width: 230px; margin: 0; flex: none; border-radius: 4px;">
+  <div>
+    <b>Data recording</b>
+    <ul style="margin: 2px 0 6px 0; padding-left: 16px;">
+      <li>GPS (position and speed)</li>
+      <li>Motions: heave, roll and pitch accelerations</li>
+      <li>Wave radar (Wavex by MIROS)</li>
+    </ul>
+    <b>Data set</b>
+    <ul style="margin: 2px 0 0 0; padding-left: 16px;">
+      <li>About two years of data</li>
+      <li>25-min time series sampled at 5 Hz</li>
+      <li>5,261 open-water samples</li>
+      <li>80% for training, 20% for testing</li>
+    </ul>
+  </div>
+</div>
+</div>
+<!-- ML-based estimates vs ERA5: Hs, Tp, Tz, mean direction (2 x 2 grid, 280 px each) -->
+<p><img data-src="images/Hs_DNV_study.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 100px; left: 665px; width: 285px;" data-fragment-index="1" alt="Scatter plot of significant wave height estimated by machine learning versus ERA5, from 0 to 8 m, with MNAE 0.077"></p>
+<p><img data-src="images/Tp_DNV_study.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 100px; left: 955px; width: 285px;" data-fragment-index="1" alt="Scatter plot of peak wave period estimated by machine learning versus ERA5, from 4 to 18 s, with MNAE 0.056"></p>
+<p><img data-src="images/Tz_DNV_study.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 385px; left: 665px; width: 285px;" data-fragment-index="1" alt="Scatter plot of zero up-crossing period estimated by machine learning versus ERA5, from 3 to 11 s, with MNAE 0.046"></p>
+<p><img data-src="images/betam_DNV_study.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 385px; left: 955px; width: 285px;" data-fragment-index="1" alt="Scatter plot of mean wave direction estimated by machine learning versus ERA5, from 0 to 360 degrees, with MNAE 0.059"></p>
 </section>
 <section id="research-outcomes-3.-correcting-for-speed-and-shallow-water" class="slide level2">
 <h2><span class="dtu-kicker">Research outcomes</span> 3. Correcting for speed and shallow water</h2>
@@ -662,16 +688,19 @@ ship's position</th>
           display:block!important;
       }</style></aside>
 <p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Forward speed</span></p>
-<div style="position: absolute; top: 160px; left: 60px; width: 1160px; font-size: 0.7em;">
+<div style="position: absolute; top: 102px; left: 60px; width: 1160px; font-size: 0.62em;">
 <ul>
 <li>Doppler shift for ships advancing <strong>at any forward speed</strong>, including following seas: <span class="dtu-blue">Mounet et al.&nbsp;(2023b, 2025, 2026a)</span>.</li>
 <li>Effect of <strong>water depth</strong> on the Doppler shift and on spectral response calculations: <span class="dtu-blue">Nielsen et al.&nbsp;(2026)</span>.</li>
 </ul>
 </div>
-<div style="position: absolute; top: 260px; left: 200px;">
-<p><a href="https://www.geogebra.org/m/cnsf7r3y"><img data-src="images/Mapping_encounter-intrinsic_wave_frequency.jpg" style="max-width: none; max-height: none;" alt="Mapping between the encounter and intrinsic wave frequencies for a given speed and heading" width="780"></a></p>
+<!-- Interactive GeoGebra applet (embed code from geogebra.org/m/cnsf7r3y).
+     Frame sized directly to 1190 x 514 px on the slide; GeoGebra scales the applet to fill it
+     (no CSS transform, which made GeoGebra shrink the applet a second time).
+     The static screenshot images/Mapping_encounter-intrinsic_wave_frequency.jpg is kept as a backup. -->
+<div style="position: absolute; top: 165px; left: 45px; width: 1190px; height: 514px; overflow: hidden;">
+<iframe scrolling="no" title="Mapping encounter / intrinsic wave frequency" data-src="https://www.geogebra.org/material/iframe/id/cnsf7r3y/width/1488/height/642/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1190" height="514" style="border: 0;"></iframe>
 </div>
-<p><span class="todo" style="position: absolute; top: 300px; left: 1030px; width: 200px; font-size: 0.5em;">Highlight the problem zone (following seas)</span></p>
 </section>
 <section id="research-outcomes-4.-a-1.4-m-robot-as-a-directional-wave-sensor" class="slide level2">
 <h2><span class="dtu-kicker">Research outcomes</span> 4. A 1.4 m robot as a directional wave sensor</h2>
@@ -689,27 +718,29 @@ ship's position</th>
           display:block!important;
       }</style></aside>
 <p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Size</span></p>
-<div style="position: absolute; top: 160px; left: 60px; width: 640px; font-size: 0.65em;">
+<div style="position: absolute; top: 112px; left: 60px; width: 680px; font-size: 0.65em;">
 <ul>
 <li>Field campaign with the <em>Oshen C-star</em>: <span class="dtu-blue">Mounet et al.&nbsp;(2026b)</span>.</li>
 <li>Hydrodynamic model estimation for a USV: <span class="dtu-blue">Mounet et al.&nbsp;(2024)</span>.</li>
 </ul>
 </div>
-<p><img data-src="images/oshen_cstar.jpg" style="max-width: none; max-height: none; position: absolute; top: 374px; left: 86px; width: 265px; height: 298px; object-fit: cover;" alt="The Oshen C-star autonomous surface vessel at sea"></p>
-<!-- Sensor labels with leader lines -->
+<!-- C-star photo, enlarged (was 265 x 298 at 86,374; now 400 x 450 at 60,190) -->
+<p><img data-src="images/oshen_cstar.jpg" style="max-width: none; max-height: none; position: absolute; top: 190px; left: 60px; width: 400px; height: 450px; object-fit: cover;" alt="The Oshen C-star autonomous surface vessel at sea"></p>
+<!-- Sensor labels with leader lines (anchor points scaled with the photo, factor 1.51) -->
 <div style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
-<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="serif" font-size="15" fill="black">
-  <line x1="270" y1="453" x2="406" y2="453" stroke="black" stroke-width="1.2"></line>
-  <text x="434" y="458">Weather station</text>
-  <line x1="149" y1="582" x2="414" y2="582" stroke="black" stroke-width="1.2"></line>
-  <text x="436" y="558">9 DoFs Inertial</text>
-  <text x="436" y="577">Measurement Unit (IMU)</text>
-  <line x1="172" y1="604" x2="414" y2="613" stroke="black" stroke-width="1.2"></line>
-  <text x="436" y="617">GPS sensor</text>
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="serif" font-size="17" fill="black">
+  <line x1="338" y1="309" x2="515" y2="309" stroke="black" stroke-width="1.4"></line>
+  <text x="525" y="315">Weather station</text>
+  <line x1="155" y1="504" x2="515" y2="504" stroke="black" stroke-width="1.4"></line>
+  <text x="525" y="490">9 DoFs Inertial</text>
+  <text x="525" y="510">Measurement Unit (IMU)</text>
+  <line x1="190" y1="537" x2="515" y2="550" stroke="black" stroke-width="1.4"></line>
+  <text x="525" y="556">GPS sensor</text>
 </svg>
 </div>
-<p><span class="dtu-blue fragment" data-fragment-index="1" style="position: absolute; top: 172px; left: 745px; font-size: 0.7em;">Vessel-as-a-buoy versus nearby buoy.</span></p>
-<p><img data-src="images/cstar_vs_buoy_spectra.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 205px; left: 740px; height: 475px;" data-fragment-index="1" alt="Directional wave spectra estimated by the buoy and by the C-star vessel for segments 1187 and 1517"></p>
+<!-- Directional spectra: vessel-as-a-buoy vs nearby buoy (1000 x 1052 px) -->
+<p><img data-src="images/cstar_vs_buoy_spectra.png" class="fragment" style="max-width: none; max-height: none; position: absolute; top: 112px; left: 770px; height: 505px;" data-fragment-index="1" alt="Directional wave spectra estimated by the buoy and by the C-star vessel for segments 1187 and 1517"></p>
+<p><span class="dtu-blue fragment" data-fragment-index="1" style="position: absolute; top: 628px; left: 770px; width: 480px; text-align: center; font-size: 0.7em;">Vessel-as-a-buoy versus nearby buoy.</span></p>
 </section>
 <section id="research-outcomes-5.-the-same-data-reveals-the-ships-own-condition" class="slide level2">
 <h2><span class="dtu-kicker">Research outcomes</span> 5. The same data reveals the ship’s own condition</h2>
@@ -726,36 +757,54 @@ ship's position</th>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<div style="position: absolute; top: 160px; left: 60px; width: 1160px; font-size: 0.65em;">
+<p><span class="dtu-tag" style="position: absolute; top: 22px; right: 70px;">Beyond waves</span></p>
+<div style="position: absolute; top: 125px; left: 60px; width: 1160px; font-size: 0.65em;">
 <ul>
 <li>Hull girder structural integrity from wave-induced motions: <span class="dtu-blue">Mekki et al.&nbsp;(2026)</span>, with DNV.</li>
 <li>Data-driven updating of ship roll-motion parameters: <span class="dtu-blue">Takami et al.&nbsp;(2026b)</span>.</li>
-<li>Machine-learning-based wave estimates with uncertainty: <span class="dtu-blue">Nielsen et al.&nbsp;(2024)</span>.</li>
+<li>Machine-learning-based wave estimates with uncertainty: <span class="dtu-blue">Nielsen et al.&nbsp;(2024b)</span>.</li>
 </ul>
 </div>
-<!-- Diagram: waves in, ship condition out -->
-<div class="dtu-box" style="position: absolute; top: 400px; left: 60px; width: 260px; text-align: center; font-size: 0.75em;">
+<!-- Diagram: measured motions in, four outputs out (stacked, evenly spaced; centres at y = 294, 389, 484, 579) -->
+<div class="dtu-box" style="position: absolute; top: 418px; left: 60px; width: 260px; text-align: center; font-size: 0.75em;">
 <p><strong>Measured motions</strong></p>
 </div>
-<p><img data-src="images/container_ship.jpeg" style="max-width: none; max-height: none; position: absolute; top: 340px; left: 420px; width: 400px;" alt="A large container ship"></p>
-<p><span class="dtu-credit" style="position: absolute; top: 548px; left: 420px; width: 400px;">“<a href="https://www.flickr.com/photos/68359921@N08/48805747472">MILAN MAERSK, MULTRATUG 33, CONTAINERSHIPS NORD &amp; JEANINE PARQUI</a>” by <a href="https://www.flickr.com/photos/68359921@N08">kees torn</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</span></p>
-<div class="dtu-box" style="position: absolute; top: 330px; left: 920px; width: 300px; text-align: center; font-size: 0.75em;">
+<p><img data-src="images/container_ship.jpeg" style="max-width: none; max-height: none; position: absolute; top: 335px; left: 420px; width: 400px;" alt="A large container ship"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 552px; left: 420px; width: 400px;">“<a href="https://www.flickr.com/photos/68359921@N08/48805747472">MILAN MAERSK, MULTRATUG 33, CONTAINERSHIPS NORD &amp; JEANINE PARQUI</a>” by <a href="https://www.flickr.com/photos/68359921@N08">kees torn</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</span></p>
+<div class="dtu-box" style="position: absolute; top: 275px; left: 920px; width: 300px; text-align: center; font-size: 0.75em;">
 <p><strong>Waves</strong> (sea state)</p>
 </div>
-<div class="dtu-box fragment" style="position: absolute; top: 470px; left: 920px; width: 300px; text-align: center; font-size: 0.75em; background-color: #2F3EEA; color: white;">
+<div class="dtu-box fragment" data-fragment-index="1" style="position: absolute; top: 370px; left: 920px; width: 300px; text-align: center; font-size: 0.75em; background-color: #2F3EEA; color: white;">
 <p><strong>Hull loads &amp; stability</strong></p>
 </div>
+<!-- Speculative outputs: dashed border, semi-transparent -->
+<div class="dtu-box fragment" data-fragment-index="2" style="position: absolute; top: 465px; left: 920px; width: 300px; text-align: center; font-size: 0.75em; border: 2px dashed #2F3EEA; background-color: rgba(47,62,234,0.06); color: rgba(0,0,0,0.65); font-style: italic;">
+<p>Surface currents?</p>
+</div>
+<div class="dtu-box fragment" data-fragment-index="2" style="position: absolute; top: 560px; left: 920px; width: 300px; text-align: center; font-size: 0.75em; border: 2px dashed #2F3EEA; background-color: rgba(47,62,234,0.06); color: rgba(0,0,0,0.65); font-style: italic;">
+<p>Wind?</p>
+</div>
+<!-- Arrows: motions -> ship -> waves (always shown) -->
 <div style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
 <svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
-  <defs><marker id="ah15" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="black"></path></marker></defs>
-  <path d="M 325 425 L 410 425" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah15)"></path>
-  <path d="M 830 420 C 870 400, 880 360, 912 355" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah15)"></path>
+  <defs><marker id="ah15" viewbox="0 0 10 10" markerunits="userSpaceOnUse" markerwidth="16" markerheight="16" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="black"></path></marker></defs>
+  <path d="M 325 437 L 410 437" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah15)"></path>
+  <path d="M 830 420 C 870 415, 875 294, 910 294" fill="none" stroke="black" stroke-width="3" marker-end="url(#ah15)"></path>
 </svg>
 </div>
-<div class="fragment" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<!-- Arrow to hull loads & stability (step 1) -->
+<div class="fragment" data-fragment-index="1" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
 <svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
-  <defs><marker id="ah15b" markerwidth="10" markerheight="10" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2F3EEA"></path></marker></defs>
-  <path d="M 830 440 C 870 460, 880 490, 912 495" fill="none" stroke="#2F3EEA" stroke-width="3" marker-end="url(#ah15b)"></path>
+  <defs><marker id="ah15b" viewbox="0 0 10 10" markerunits="userSpaceOnUse" markerwidth="16" markerheight="16" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2F3EEA"></path></marker></defs>
+  <path d="M 830 432 C 870 430, 875 389, 910 389" fill="none" stroke="#2F3EEA" stroke-width="3" marker-end="url(#ah15b)"></path>
+</svg>
+</div>
+<!-- Dashed arrows to the speculative outputs (step 2) -->
+<div class="fragment" data-fragment-index="2" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; pointer-events: none;">
+<svg width="1280" height="720" viewbox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah15c" viewbox="0 0 10 10" markerunits="userSpaceOnUse" markerwidth="16" markerheight="16" refx="8" refy="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2F3EEA" fill-opacity="0.6"></path></marker></defs>
+  <path d="M 830 444 C 870 448, 875 484, 910 484" fill="none" stroke="#2F3EEA" stroke-opacity="0.6" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ah15c)"></path>
+  <path d="M 830 456 C 870 468, 875 579, 910 579" fill="none" stroke="#2F3EEA" stroke-opacity="0.6" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#ah15c)"></path>
 </svg>
 </div>
 <!-- ======================================================================= -->
@@ -796,8 +845,8 @@ ship's position</th>
 <p><a href="https://netsse.readthedocs.io/en/latest/index.html"><img data-src="images/netsse_qr_code.png" style="max-width: none; max-height: none;" alt="QR code to netsse.readthedocs.io" width="380"></a></p>
 </div>
 </section>
-<section id="what-could-this-mean-for-standards-where-wave-data-already-enters-standards-and-rules" class="slide level2">
-<h2><span class="dtu-kicker">What could this mean for standards?</span> Where wave data already enters standards and rules</h2>
+<section id="what-could-this-mean-for-standards-where-wave-data-enter-standards-and-rules" class="slide level2">
+<h2><span class="dtu-kicker">What could this mean for standards?</span> Where wave data enter standards and rules</h2>
 <aside class="notes">
 <p>(1:30) Many standards consume wave data. To ask (not assert): does any of them specify how to estimate it from onboard motions, or how good the estimate must be? Someone in the room may know a counterexample.</p>
 <style type="text/css">
@@ -811,50 +860,43 @@ ship's position</th>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<div style="position: absolute; top: 165px; left: 60px; width: 1160px; font-size: 16px;">
+<div style="position: absolute; top: 130px; left: 60px; width: 1160px; font-size: 22px;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Standard / guidance</th>
 <th>What the wave input is used for</th>
-<th>How the wave input is obtained today</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>ISO 15016</td>
 <td>Speed trials: correction for waves</td>
-<td><span class="todo">to fill</span></td>
 </tr>
 <tr class="even">
 <td>IMO MSC.1/Circ.1228</td>
 <td>Guidance to the master for avoiding dangerous situations in adverse weather and sea conditions</td>
-<td><span class="todo">to fill</span></td>
 </tr>
 <tr class="odd">
-<td>ISO 19030 <span class="todo">verify</span></td>
+<td>ISO 19030</td>
 <td>Hull and propeller performance</td>
-<td><span class="todo">to fill</span></td>
 </tr>
 <tr class="even">
-<td>Second-generation intact stability criteria, operational measures <span class="todo">verify</span></td>
+<td>Second-generation intact stability criteria, operational measures</td>
 <td></td>
-<td><span class="todo">to fill</span></td>
 </tr>
 <tr class="odd">
-<td>IACS wave scatter data for design loads <span class="todo">verify</span></td>
+<td>IACS wave scatter data for design loads</td>
 <td></td>
-<td><span class="todo">to fill</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="dtu-box" style="position: absolute; top: 560px; left: 60px; width: 1160px; text-align: center; font-size: 0.75em;">
+<div class="dtu-box" style="position: absolute; top: 470px; left: 60px; width: 1160px; text-align: center; font-size: 0.95em;">
 <p><span class="dtu-blue">Question:</span> does any standard specify <strong>how</strong> to estimate waves from onboard motions, or <strong>how good</strong> the estimate must be?</p>
 </div>
 </section>
@@ -889,7 +931,7 @@ ship's position</th>
 <section id="take-home-messages" class="slide level2">
 <h2>Take-home messages</h2>
 <aside class="notes">
-<p>(0:10) Ships can fill the wave observation gap, the methods exist and are open, and standards are the missing piece.</p>
+<p>(0:30) Ships can fill the wave observation gap, the methods exist and are open, and standards are the missing piece.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -901,12 +943,18 @@ ship's position</th>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<p><img data-src="images/sea_horizon.jpg" style="max-width: none; max-height: none; position: absolute; top: 6px; left: 740px; width: 540px; height: 680px; object-fit: cover;" alt="The sea under a cloudy sky"></p>
-<div style="position: absolute; top: 200px; left: 60px; width: 640px; font-size: 0.9em;">
+<p><img data-src="images/sea_horizon.jpg" style="max-width: none; max-height: none; position: absolute; top: -4px; left: 740px; width: 540px; height: 680px; object-fit: cover;" alt="The sea under a cloudy sky"></p>
+<div style="position: absolute; top: 125px; left: 60px; width: 650px; font-size: 0.86em; line-height: 1.35;">
 <ul>
-<li>Ships can <strong>fill the wave observation gap</strong>.</li>
+<li>Ships can <strong>fill the wave observation gap</strong>: they sail where buoys are absent, and networks of ships and buoys extend the coverage.</li>
+<li>The <strong>wave buoy analogy</strong> gives estimates in fair agreement with buoys and wave models, despite the ship’s size, forward speed and uncertain filter.
+<ul>
+<li>Transfer functions require the loading condition and speed, but can be tuned from the ship’s own data.</li>
+<li>Machine learning needs no transfer functions and yields good sea-state parameters.</li>
+</ul></li>
+<li>The same motion data also reveal <strong>hull loads and stability</strong>.</li>
 <li>The methods <strong>exist and are open</strong> (NetSSE).</li>
-<li><strong>Standards</strong> are the missing piece.</li>
+<li>Might <strong>standards</strong> be the missing piece?</li>
 </ul>
 </div>
 </section>
@@ -914,6 +962,7 @@ ship's position</th>
 <h2>References</h2>
 <div style="position: absolute; top: 150px; left: 40px; width: 590px; margin-top: 0; font-size: 13px; line-height: 1.3;">
 <p>IMO (2020). <em>Fourth IMO Greenhouse Gas Study 2020</em>. International Maritime Organization, London.</p>
+<p>IMO (2025). <em>Development of measures to prevent the loss of containers at sea: Estimate of containers lost at sea – 2025 update</em>. Submitted by the World Shipping Council (WSC), 30 June 2025. International Maritime Organization, London.</p>
 <p>Mekki, M., Nielsen, U.D., Mounet, R.E.G., Storhaug, G. (2026). Data-driven estimation of hull girder structural integrity using wave-induced motions. <em>Mar.&nbsp;Struct.</em> 108, 104036.</p>
 <p>Mounet, R.E.G., Nielsen, U.D., Brodtkorb, A.H., Tannuri, E.A., de Mello, P.C. (2022). Simultaneous sea state estimation and transfer function tuning using a network of dynamically positioned ships. <em>Appl. Ocean Res.</em> 129, 103367.</p>
 <p>Mounet, R.E.G., Chen, J., Nielsen, U.D., Brodtkorb, A.H., Pillai, A.C., Ashton, I.G.C., Steele, E.C.C. (2023a). Deriving spatial wave data from a network of buoys and ships. <em>Ocean Eng.</em> 281, 114892.</p>
@@ -921,16 +970,19 @@ ship's position</th>
 <p>Mounet, R.E.G., Nielsen, U.D., Brodtkorb, A.H., Øveraas, H., Dallolio, A., Johansen, T.A. (2024). Data-driven method for hydrodynamic model estimation applied to an unmanned surface vehicle. <em>Measurement</em> 234, 114724.</p>
 <p>Mounet, R.E.G., Nielsen, U.D., Takami, T. (2025). Doppler shift approximation in seakeeping problems: a new formulation for ships advancing at any forward speed. <em>Proc. PRADS 2025</em>.</p>
 <p>Mounet, R.E.G., Nielsen, U.D., Takami, T. (2026a). Approximating the Doppler shift in sea-wave spectra observed from an advancing floating platform. <em>Appl. Math. Model.</em> 157, 116922.</p>
+<p>Mounet, R.E.G., Nielsen, U.D., Pillai, A.C., Ashton, I.G.C., Holman, F., Laverack, A., Steele, E.C.C. (2026b). Inferring directional wave spectra via motion sensing on ocean-going autonomous surface vessels. <em>Proc. ASME OMAE 2026</em>.</p>
 </div>
 <div style="position: absolute; top: 150px; left: 660px; width: 590px; margin-top: 0; font-size: 13px; line-height: 1.3;">
-<p>Mounet, R.E.G., Nielsen, U.D., Pillai, A.C., Ashton, I.G.C., Holman, F., Laverack, A., Steele, E.C.C. (2026b). Inferring directional wave spectra via motion sensing on ocean-going autonomous surface vessels. <em>Proc. ASME OMAE 2026</em>.</p>
+<p>Munk, W.H. (2002). Testimony to the U.S. Commission on Ocean Policy, San Pedro, California, 18 April 2002. <a href="https://govinfo.library.unt.edu/oceancommission/meetings/apr18_19_02/munk_statement.pdf" class="uri">https://govinfo.library.unt.edu/oceancommission/meetings/apr18_19_02/munk_statement.pdf</a></p>
+<p>Nielsen, U.D. (2018). <em>Sea state estimation based on measurements of wave-induced ship responses</em>. Doctoral thesis, Technical University of Denmark (DTU).</p>
 <p>Nielsen, U.D., Mounet, R.E.G., Brodtkorb, A.H. (2022). Parameterised transfer functions with associated confidence bands. <em>Appl. Ocean Res.</em> 125, 103250.</p>
 <p>Nielsen, U.D., Bingham, H.B., Brodtkorb, A.H., Iseki, T., Jensen, J.J., Mittendorf, M., Mounet, R.E.G., Shao, Y., Storhaug, G., Sørensen, A.J., Takami, T. (2023). Estimating waves via measured ship responses. <em>Sci. Rep.</em> 13, 17342.</p>
-<p>Nielsen, U.D., Iwase, K., Mounet, R.E.G., Storhaug, G. (2024). Uncertainty-associated directional wave spectrum estimation from wave-induced ship responses using machine learning methods. <em>Ocean Eng.</em> 313, 119543.</p>
+<p>Nielsen, U.D., Iwase, K., Mounet, R.E.G. (2024a). Comparing machine learning-based sea state estimates by the wave buoy analogy. <em>Appl. Ocean Res.</em> 149, 104042.</p>
+<p>Nielsen, U.D., Iwase, K., Mounet, R.E.G., Storhaug, G. (2024b). Uncertainty-associated directional wave spectrum estimation from wave-induced ship responses using machine learning methods. <em>Ocean Eng.</em> 313, 119543.</p>
 <p>Nielsen, U.D., Mounet, R.E.G., Takami, T. (2026). Investigation of depth-effects on the Doppler shift and the consequence in spectral response calculations for ships. <em>Ocean Eng.</em> 351, 124298.</p>
+<p>Storhaug, G., Moe, E., Piedras Lopes, T.A. (2007). Whipping measurements onboard a midsize container vessel operating in the North Atlantic. In: <em>Int. Symp. on Ship Design and Construction</em>. Marintec, RINA, CMP and SNAME.</p>
 <p>Takami, T., Nielsen, U.D., Mounet, R.E.G., Jensen, J.J., Mori, R., Komoriyama, Y. (2026a). Blind identification of incident waves and response transfer functions of a marine vessel based on measured responses. <em>Expert Syst. Appl.</em> 296, 129236.</p>
 <p>Takami, T., Nielsen, U.D., Mounet, R.E.G., Sasa, K. (2026b). A data-driven scheme for updating of parameters for ship roll motion. <em>Ocean Eng.</em> 356, 125346.</p>
-<p><span class="todo">Source of the Munk (2002) quote</span></p>
 </div>
 </section>
 <section id="thanks" class="slide level2">
@@ -948,7 +1000,8 @@ ship's position</th>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<p><img data-src="images/asv_fjord.jpg" style="max-width: none; max-height: none; position: absolute; top: 6px; left: 96px; width: 907px; height: 680px; object-fit: cover;" alt="An autonomous surface vessel in a fjord"></p>
+<p><img data-src="images/This%20ship%20has%20sailed%20-%20Vince%20Alongi.png" style="max-width: none; max-height: none; position: absolute; top: -4px; left: 96px; width: 907px; height: 680px; object-fit: cover; object-position: 48% 50%;" alt="A ship silhouetted on the horizon against an orange sunset over a choppy sea"></p>
+<p><span class="dtu-credit" style="position: absolute; top: 660px; left: 104px; color: rgba(255,255,255,0.85); font-size: 11px;"><a href="https://www.flickr.com/photos/90963248@N00/286207771">“This ship has sailed”</a> by <a href="https://www.flickr.com/photos/90963248@N00">Vince Alongi</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</span></p>
 <div style="position: absolute; top: 60px; left: 1010px; width: 262px; text-align: center; font-size: 18px; line-height: 1.3;">
 <p><span class="dtu-blue" style="font-weight: 700; font-size: 1.4em;">Thank you!</span></p>
 <p><a href="mailto:regmo@dtu.dk">regmo@dtu.dk</a></p>
@@ -957,10 +1010,14 @@ ship's position</th>
 <p><a href="https://netsse.readthedocs.io/en/latest/index.html"><img data-src="images/netsse_qr_code.png" style="max-width: none; max-height: none;" alt="QR code to netsse.readthedocs.io" width="180"></a></p>
 </div>
 <p><span style="position: absolute; top: 355px; left: 1010px; width: 262px; text-align: center; font-size: 12px;"><code>netsse.readthedocs.io</code></span></p>
-<div class="todo" style="position: absolute; top: 400px; left: 1010px; width: 262px; height: 200px; font-size: 12px;">
-<p>Acknowledgements:<br>funders of WEFOSWAB + logos</p>
+<div style="position: absolute; top: 385px; left: 1010px; width: 262px; text-align: center; font-size: 12px; line-height: 1.3;">
+<p>I am grateful for financial support by <span class="dtu-blue">Orients Fond, Denmark</span> and by <span class="dtu-blue">Danmarks Frie Forskningsfond, Denmark</span>.</p>
+<p>Moreover, the support from the <span class="dtu-blue">Japan Society of Naval Architects and Ocean Engineers (JASNAOE)</span> collaborative research program is greatly acknowledged.</p>
 </div>
-<p><a href="#//questions" style="position: absolute; top: 625px; left: 1010px; width: 262px; text-align: center; font-size: 14px;">← Back to the questions</a></p>
+<!-- Funder logos: two small logos side by side, wide JASNAOE logo underneath -->
+<p><img data-src="images/logo_orients_fond.png" style="max-width: none; max-height: none; position: absolute; top: 515px; left: 1022px; height: 46px;" alt="A/S D/S Orient's Fond logo"></p>
+<p><img data-src="images/logo_dff.png" style="max-width: none; max-height: none; position: absolute; top: 521px; left: 1150px; height: 34px;" alt="Danmarks Frie Forskningsfond logo"></p>
+<p><img data-src="images/logo_jasnaoe.png" style="max-width: none; max-height: none; position: absolute; top: 575px; left: 1026px; width: 230px;" alt="JASNAOE logo"></p>
 
 </section>
     </div>
