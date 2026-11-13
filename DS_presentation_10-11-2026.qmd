@@ -16,6 +16,7 @@ format:
     height: 720
     margin: 0
     slide-number: c
+    pdf-max-pages-per-slide: 1
     auto-stretch: false
     footer: "[10 November 2026]{.dtu-date} Presentation to DS/S-262 committee"
 title-slide-attributes:
